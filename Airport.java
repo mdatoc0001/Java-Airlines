@@ -1,7 +1,7 @@
 import java.util.*; 
 
 public class Airport {
-    private Flight flight;
+    protected Flight flight;
 
     //constructor
     public Airport(String name, String date, String cost, String departure, String arrival, String duration) {
@@ -20,16 +20,16 @@ public class Airport {
             System.out.println("\nLAX Airport selected. Select a flight below to view details.");
             Flight f1 = new Flight("Flight 287","Date: 2/28/24","$112.97","Departure: 3:53 PST","Arrival: 9:53 CST","4 hours");
             Flight f2 = new Flight("Flight 312","Date: 2/29/24","$115.97","Departure: 3:53 PST","Arrival: 9:53 CST","4 hours");
-            System.out.println("1. " + f1.name);
-            System.out.println("2. " + f2.name);
+            System.out.println("1. " + f1.getName());
+            System.out.println("2. " + f2.getName());
             System.out.print("Select which flight to view (1 or 2): ");
             input = scan.nextInt();
 
             if(input == 1) {
-               System.out.println(f1.name + ", " + f1.date + ", " + f1.cost + ", " + f1.departure + ", " + f1.arrival + ", " + f1.duration);
+               System.out.println(f1.getName() + ", " + f1.getDate() + ", " + f1.getCost() + ", " + f1.getDeparture() + ", " + f1.getArrival() + ", " + f1.getDuration());
             }
             if(input == 2) {
-               System.out.println(f2.name + ", " + f2.date + ", " + f2.cost + ", " + f2.departure + ", " + f2.arrival + ", " + f2.duration);
+               System.out.println(f2.getName() + ", " + f2.getDate() + ", " + f2.getCost() + ", " + f2.getDeparture() + ", " + f2.getArrival() + ", " + f2.getDuration());
             }
          }
          
@@ -38,17 +38,16 @@ public class Airport {
             System.out.println("\nBNA Airport selected. Select a flight below to view details.");
             Flight f1 = new Flight("Flight 299","Date: 2/28/24","$112.97","Departure: 3:53 PST","Arrival: 9:53 CST","4 hours");
             Flight f2 = new Flight("Flight 355","Date: 2/29/24","$115.97","Departure: 3:53 PST","Arrival: 9:53 CST","4 hours");
-            System.out.println("1. " + f1.name);
-            System.out.println("2. " + f2.name);
+            System.out.println("1. " + f1.getName());
+            System.out.println("2. " + f2.getName());
             System.out.print("Select which flight to view (1 or 2): ");
             input = scan.nextInt();
             if(input == 1) {
-               System.out.println(f1.name + ", " + f1.date + ", " + f1.cost + ", " + f1.departure + ", " + f1.arrival + ", " + f1.duration);
+               System.out.println(f1.getName() + ", " + f1.getDate() + ", " + f1.getCost() + ", " + f1.getDeparture() + ", " + f1.getArrival() + ", " + f1.getDuration());
             }
             if(input == 2) {
-               System.out.println(f2.name + ", " + f2.date + ", " + f2.cost + ", " + f2.departure + ", " + f2.arrival + ", " + f2.duration);
+               System.out.println(f2.getName() + ", " + f2.getDate() + ", " + f2.getCost() + ", " + f2.getDeparture() + ", " + f2.getArrival() + ", " + f2.getDuration());
             }
-
          }
          else {
             System.out.println("\nInput error, select a listed value (1 or 2)");
