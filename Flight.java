@@ -8,8 +8,8 @@ public class Flight {
     private int totalSeats;
     private int takenSeats;
     private int availableSeats;
-    private String seatNumber;
-    public Flight (String name, String date, double cost, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatNumber) {
+    private String seatName;
+    public Flight (String name, String date, double cost, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName) {
         this.name = name;
         this.date = date;
         this.cost = cost;
@@ -19,7 +19,7 @@ public class Flight {
         this.totalSeats = totalSeats;
         this.takenSeats = takenSeats;
         this.availableSeats = availableSeats;
-        this.seatNumber = seatNumber;
+        this.seatName = seatName;
     }
     
     //Getters
@@ -50,8 +50,8 @@ public class Flight {
     public int getAvailableSeats() {
         return this.availableSeats;
     }
-    public String getSeatNumber() {
-        return this.seatNumber;
+    public String getSeatName() {
+        return this.seatName;
     }
     
     //Setters
