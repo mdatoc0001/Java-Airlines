@@ -9,7 +9,9 @@ public class Flight {
     private int takenSeats;
     private int availableSeats;
     private String seatName;
-    public Flight (String name, String date, double cost, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName) {
+    private String terminal;
+    private String gate;
+    public Flight (String name, String date, double cost, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
         this.name = name;
         this.date = date;
         this.cost = cost;
@@ -20,6 +22,8 @@ public class Flight {
         this.takenSeats = takenSeats;
         this.availableSeats = availableSeats;
         this.seatName = seatName;
+        this.terminal = terminal;
+        this.gate = gate;
     }
     
     //Getters
@@ -53,6 +57,12 @@ public class Flight {
     public String getSeatName() {
         return this.seatName;
     }
+    public String getTerminal() {
+      return this.terminal;
+    }
+    public String getGate() {
+      return this.gate;
+    }
     
     //Setters
     public void setName(String name) {
@@ -84,5 +94,11 @@ public class Flight {
     }
     public void setSeatName(String seatName) {
         this.seatName = seatName;
+    }
+    public void setTerminal(String terminal) {
+        this.terminal = terminal;
+    }
+    public void setGate(String gate) {
+        this.gate = gate;
     }
 }
