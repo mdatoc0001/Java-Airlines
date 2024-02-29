@@ -1,11 +1,11 @@
-public class flight {
-    private String name;
-    private String date;
-    private String cost;
-    private String departure;
-    private String arrival;
-    private String duration;
-    public flight (String name, String date, String cost, String departure, String arrival, String duration) {
+public class Flight {
+    protected String name;
+    protected String date;
+    protected String cost;
+    protected String departure;
+    protected String arrival;
+    protected String duration;
+    public Flight (String name, String date, String cost, String departure, String arrival, String duration) {
         this.name = name;
         this.date = date;
         this.cost = cost;
