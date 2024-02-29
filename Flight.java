@@ -1,7 +1,7 @@
 public class Flight {
     private String name;
     private String date;
-    private double cost;
+    private String cost;
     private String departure;
     private String arrival;
     private String duration;
@@ -11,7 +11,7 @@ public class Flight {
     private String seatName;
     private String terminal;
     private String gate;
-    public Flight (String name, String date, double cost, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
+    public Flight (String name, String date, String cost, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
         this.name = name;
         this.date = date;
         this.cost = cost;
@@ -33,7 +33,7 @@ public class Flight {
     public String getDate() {
          return this.date;
     }
-    public double getCost() {
+    public String getCost() {
          return this.cost;
     }
     public String getDeparture() {
@@ -71,7 +71,7 @@ public class Flight {
     public void setDate(String date) {
         this.date = date;
     }
-    public void setCost(double cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
     public void setDeparture(String departure) {
