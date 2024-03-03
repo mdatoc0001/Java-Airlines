@@ -2,6 +2,7 @@ public class Flight {
     private String name;
     private String date;
     private String cost;
+    private String destination;
     private String departure;
     private String arrival;
     private String duration;
@@ -9,12 +10,14 @@ public class Flight {
     private int takenSeats;
     private int availableSeats;
     private String seatName;
+    private String airport;
     private String terminal;
     private String gate;
-    public Flight (String name, String date, String cost, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
+    public Flight (String name, String date, String cost, String destination, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String airport, String terminal, String gate) {
         this.name = name;
         this.date = date;
         this.cost = cost;
+        this.destination = destination;
         this.departure = departure;
         this.arrival = arrival;
         this.duration = duration;
@@ -22,6 +25,7 @@ public class Flight {
         this.takenSeats = takenSeats;
         this.availableSeats = availableSeats;
         this.seatName = seatName;
+        this.airport = airport;
         this.terminal = terminal;
         this.gate = gate;
     }
@@ -36,6 +40,9 @@ public class Flight {
     public String getCost() {
          return this.cost;
     }
+    public String getDestination() {
+        return this.destination;
+   }
     public String getDeparture() {
          return this.departure;
     }
@@ -57,6 +64,9 @@ public class Flight {
     public String getSeatName() {
         return this.seatName;
     }
+    public String getAirport() {
+        return this.airport;
+    }
     public String getTerminal() {
       return this.terminal;
     }
@@ -73,6 +83,9 @@ public class Flight {
     }
     public void setCost(String cost) {
         this.cost = cost;
+    }
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
     public void setDeparture(String departure) {
         this.departure = departure;
@@ -94,6 +107,9 @@ public class Flight {
     }
     public void setSeatName(String seatName) {
         this.seatName = seatName;
+    }
+    public void setAirport(String airport) {
+        this.airport = airport;
     }
     public void setTerminal(String terminal) {
         this.terminal = terminal;
