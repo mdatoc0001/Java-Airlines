@@ -9,11 +9,14 @@ Departure_Time varchar(100),
 Arrival_Time varchar(100),
 Terminal varchar(100),
 Gate varchar(100),
+Total_seats int,
+Taken_seats int,
+Available_seats int,
 Cost varchar(10,2),
 Duration varchar(100)
 );
 INSERT INTO AVAILABLE_FLIGHTS
-VALUES ('Flight 287', 'LAX Airport', 'BNA Airport', '03-01-2024', '03-01-2024', '3:53 PST' , '9:53 CST', 'B', 2, '$112.97', '4 hours');
+VALUES ('Flight 287', 'LAX Airport', 'BNA Airport', '03-01-2024', '03-01-2024', '3:53 PST' , '9:53 CST', 'B', 2, 250, 0, 250, '$112.97', '4 hours');
 INSERT INTO AVAILABLE_FLIGHTS
-VALUES ('Flight 321', 'LAX Airport', 'DFW Airport', '03-04-2024', '03-05-2024', '3:53 PST' , '17:53 PST', 'A', 5, '$132.85', '14 hours');
+VALUES ('Flight 321', 'LAX Airport', 'DFW Airport', '03-04-2024', '03-05-2024', '3:53 PST' , '17:53 PST', 'A', 5, 175, 0, 175, '$132.85', '14 hours');
 select * from AVAILABLE_FLIGHTS;
