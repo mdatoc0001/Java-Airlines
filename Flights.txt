@@ -1,8 +1,8 @@
 --Flight List
 CREATE TABLE AVAILABLE_FLIGHTS (
 Name varchar(100),
-Depart_From varchar(100),
-Arrive_At varchar(100),
+Departure_Airport varchar(100),
+Arrival_Airport varchar(100),
 Departure_Date date,
 Arrival_Date date,
 Departure_Time varchar(100),
