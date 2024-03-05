@@ -7,7 +7,7 @@ Departure_Date date,
 Arrival_Date date,
 Departure_Time varchar(100),
 Arrival_Time varchar(100),
-Terminal int,
+Terminal varchar(100),
 Gate varchar(100),
 Cost varchar(10,2),
 Duration varchar(100)
