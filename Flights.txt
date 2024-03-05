@@ -1,0 +1,19 @@
+--Flight List
+CREATE TABLE AVAILABLE_FLIGHTS (
+Name varchar(100),
+Depart_From varchar(100),
+Arrive_At varchar(100),
+Departure_Date date,
+Arrival_Date date,
+Departure_Time varchar(100),
+Arrival_Time varchar(100),
+Terminal int,
+Gate varchar(100),
+Cost varchar(10,2),
+Duration varchar(100)
+);
+INSERT INTO AVAILABLE_FLIGHTS
+VALUES ('Flight 287', 'LAX Airport', 'BNA Airport', '03-01-2024', '03-01-2024', '3:53 PST' , '9:53 CST', 'B', 2, '$112.97', '4 hours');
+INSERT INTO AVAILABLE_FLIGHTS
+VALUES ('Flight 321', 'LAX Airport', 'DFW Airport', '03-04-2024', '03-05-2024', '3:53 PST' , '17:53 PST', 'A', 5, '$132.85', '14 hours');
+select * from AVAILABLE_FLIGHTS;
