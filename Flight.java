@@ -14,13 +14,15 @@ public class Flight {
     private String seatName;
     private String terminal;
     private String gate;
-    public Flight (String name, String date, String cost, String destination, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
+    public Flight (String name, String date, String cost, String destination, String departureDate, String arrivalDate, String departureTime, String arrivalTime, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
         this.name = name;
         this.date = date;
         this.cost = cost;
         this.destination = destination;
-        this.departure = departure;
-        this.arrival = arrival;
+        this.departureDate = departureDate;
+        this.arrivalDate = arrivalDate;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
         this.duration = duration;
         this.totalSeats = totalSeats;
         this.takenSeats = takenSeats;
@@ -43,11 +45,17 @@ public class Flight {
     public String getDestination() {
         return this.destination;
    }
-    public String getDeparture() {
-         return this.departure;
+    public String getDepartureDate() {
+         return this.departureDate;
     }
-    public String getArrival() {
-         return this.arrival;
+    public String getArrivalDate() {
+         return this.arrivalDate;
+    }
+    public String getDepartureTime() {
+         return this.departureTime;
+    }
+    public String getArrivalTime() {
+         return this.arrivalTime;
     }
     public String getDuration() {
          return this.duration;
@@ -84,11 +92,17 @@ public class Flight {
     public void setDestination(String destination) {
         this.destination = destination;
     }
-    public void setDeparture(String departure) {
-        this.departure = departure;
+    public void setDeparture(String departureDate) {
+        this.departureDate = departureDate;
     }
-    public void setArrival(String arrival) {
-        this.arrival = arrival;
+    public void setArrival(String arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
+    public void setDeparture(String departureTime) {
+        this.departureTime = departureTime;
+    }
+    public void setArrival(String arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
     public void setDuration(String duration) {
         this.duration = duration;
