@@ -92,16 +92,16 @@ public class Flight {
     public void setDestination(String destination) {
         this.destination = destination;
     }
-    public void setDeparture(String departureDate) {
+    public void setDepartureDate(String departureDate) {
         this.departureDate = departureDate;
     }
-    public void setArrival(String arrivalDate) {
+    public void setArrivalDate(String arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
-    public void setDeparture(String departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
-    public void setArrival(String arrivalTime) {
+    public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
     public void setDuration(String duration) {
