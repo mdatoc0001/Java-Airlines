@@ -1,18 +1,19 @@
 public class Flight {
     private String name;
-    private String date;
-    private String cost;
-    private String destination;
-    private String departure;
-    private String arrival;
-    private String duration;
+    private String departAirport;
+    private String arrivalAirport;
+    private String departDate;
+    private String arrivalDate;
+    private String departTime;
+    private String arrivalTime;
+    private String terminal;
+    private int gate;
     private int totalSeats;
     private int takenSeats;
     private int availableSeats;
-    private String seatName;
-    private String terminal;
-    private String gate;
-    public Flight (String name, String date, String cost, String destination, String departure, String arrival, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
+    private String cost;
+    private String duration;
+    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, int t, int g, int ts, String tas, String as, String c, String d) {
         this.name = name;
         this.date = date;
         this.cost = cost;
