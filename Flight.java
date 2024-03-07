@@ -3,8 +3,10 @@ public class Flight {
     private String date;
     private String cost;
     private String destination;
-    private String departure;
-    private String arrival;
+    private String departureDate;
+    private String arrivalDate;
+    private String departureTime;
+    private String arrivalTime;
     private String duration;
     private int totalSeats;
     private int takenSeats;
