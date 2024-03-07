@@ -11,54 +11,52 @@ public class Flight {
     private int totalSeats;
     private int takenSeats;
     private int availableSeats;
-    private String seatName;
-    private String terminal;
-    private String gate;
-    public Flight (String name, String date, String cost, String destination, String departureDate, String arrivalDate, String departureTime, String arrivalTime, String duration, int totalSeats, int takenSeats, int availableSeats, String seatName, String terminal, String gate) {
-        this.name = name;
-        this.date = date;
-        this.cost = cost;
-        this.destination = destination;
-        this.departureDate = departureDate;
-        this.arrivalDate = arrivalDate;
-        this.departureTime = departureTime;
-        this.arrivalTime = arrivalTime;
-        this.duration = duration;
-        this.totalSeats = totalSeats;
-        this.takenSeats = takenSeats;
-        this.availableSeats = availableSeats;
-        this.seatName = seatName;
-        this.terminal = terminal;
-        this.gate = gate;
+    private String cost;
+    private String duration;
+    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, int g, int ts, int tas, int as, String c, String d) {
+        this.name = n;
+        this.departAirport = da;
+        this.arrivalAirport = aa;
+        this.departDate = dd;
+        this.arrivalDate = ad;
+        this.departTime = dt;
+        this.arrivalTime = at;
+        this.terminal = t;
+        this.gate = g;
+        this.totalSeats = ts;
+        this.takenSeats = tas;
+        this.availableSeats = as;
+        this.cost = c;
+        this.duration = d;
     }
     
     //Getters
     public String getName() {
          return this.name;
     }
-    public String getDate() {
-         return this.date;
+    public String getDepartAirport() {
+         return this.departAirport;
     }
-    public String getCost() {
-         return this.cost;
+    public String getArrivalAirport() {
+         return this.arrivalAirport;
     }
-    public String getDestination() {
-        return this.destination;
+    public String getDepartDate() {
+        return this.departDate;
    }
-    public String getDepartureDate() {
-         return this.departureDate;
-    }
     public String getArrivalDate() {
          return this.arrivalDate;
     }
-    public String getDepartureTime() {
-         return this.departureTime;
+    public String getDepartTime() {
+         return this.departTime;
     }
     public String getArrivalTime() {
          return this.arrivalTime;
     }
-    public String getDuration() {
-         return this.duration;
+    public String getTerminal() {
+        return this.terminal;
+    }
+    public int getGate() {
+        return this.gate;
     }
     public int getTotalSeats() {
         return this.totalSeats;
@@ -67,62 +65,56 @@ public class Flight {
         return this.takenSeats;
     }
     public int getAvailableSeats() {
-        return this.availableSeats;
+      return this.availableSeats;
     }
-    public String getSeatName() {
-        return this.seatName;
+    public String getCost() {
+      return this.cost;
     }
-    public String getTerminal() {
-      return this.terminal;
-    }
-    public String getGate() {
-      return this.gate;
+    public String getDuration() {
+        return this.duration;
     }
     
     //Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setDate(String date) {
-        this.date = date;
-    }
-    public void setCost(String cost) {
-        this.cost = cost;
-    }
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-    public void setDepartureDate(String departureDate) {
-        this.departureDate = departureDate;
-    }
-    public void setArrivalDate(String arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
-    public void setDepartureTime(String departureTime) {
-        this.departureTime = departureTime;
-    }
-    public void setArrivalTime(String arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-    public void setTotalSeats(int totalSeats) {
-        this.totalSeats = totalSeats;
-    }
-    public void setTakenSeats(int takenSeats) {
-        this.takenSeats = takenSeats;
-    }
-    public void setAvailableSeats(int availableSeats) {
-        this.availableSeats = availableSeats;
-    }
-    public void setSeatName(String seatName) {
-        this.seatName = seatName;
-    }
-    public void setTerminal(String terminal) {
-        this.terminal = terminal;
-    }
-    public void setGate(String gate) {
-        this.gate = gate;
-    }
+    public void setName(String n) {
+        this.name = n;
+   }
+   public void setDepartAirport(String da) {
+        this.departAirport = da;
+   }
+   public void setArrivalAirport(String aa) {
+        this.arrivalAirport = aa;
+   }
+   public void setDepartDate(String dd) {
+       this.departDate = dd;
+  }
+   public void setArrivalDate(String ad) {
+        this.arrivalDate = ad;
+   }
+   public void setDepartTime(String dt) {
+        this.departTime = dt;
+   }
+   public void setArrivalTime(String at) {
+        this.arrivalTime = at;
+   }
+   public void setTerminal(String t) {
+       this.terminal = t;
+   }
+   public void setGate(int g) {
+       this.gate = g;
+   }
+   public void setTotalSeats(int ts) {
+       this.totalSeats = ts;
+   }
+   public void setTakenSeats(int tas) {
+       this.takenSeats = tas;
+   }
+   public void setAvailableSeats(int as) {
+       this.availableSeats = as;
+   }
+   public void setCost(String c) {
+       this.cost = c;
+   }
+   public void setDuration(String d) {
+       this.duration = d;
+   }
 }
