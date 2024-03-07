@@ -119,4 +119,8 @@ public class Flight {
    public void setDuration(String d) {
        this.duration = d;
    }
+
+   public String toString() {
+       return getName() + " " + getDepartAirport() + " " + getArrivalAirport() + " " + getDepartDate() + " " + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration();
+   }
 }
