@@ -56,10 +56,10 @@ public class AirportGUI extends Application {
               //
               selectedAirport = new Airport("JFK");
               selectedAirport.makeFlight("Flight1", "2024-03-10", "$200", "Destination1", "Departure1", "Arrival1",
-                      "2 hours", 150, 50, 100, "A1", "Terminal1", "Gate3");
+                      "2 hours", 150, 50, 100, "A1", "Terminal1", "Gate1");
       
               selectedAirport.makeFlight("Flight2", "2024-03-15", "$250", "Destination2", "Departure2", "Arrival2",
-                      "3 hours", 200, 75, 125, "B1", "Terminal2", "Gate4");
+                      "3 hours", 200, 75, 125, "B1", "Terminal2", "Gate2");
         primaryStage.setScene(flightSelectionScene);
         });
 
@@ -151,4 +151,15 @@ public class AirportGUI extends Application {
    
        System.out.println("----------------------------------------");
     }
+    
+    /**
+    NOTES: 
+    
+    - Need to find a way to add labels in the grids to add text
+    - AirportGUI will need to be the main class that also declares the other classes, including profile, maybe?
+      - Alternatively, AirportGUI will need to be initialized in the main class, HOWEVER the flight info must be initialized in the main class as well, NOT
+        in the AirportGUI class
+    - Need to implement the Flights.txt to create the flights in the GUI, the GitHub .txt is in SQL form
+     
+    */
 }
