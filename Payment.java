@@ -3,8 +3,9 @@ import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Payment {
-   String paymentMethod, cardType, name, accountType, address, validityDate;
-   protected int cardNo, cost, accountNo, cvv, routingNo, paymentID;
+   String paymentMethod, cardType, name, accountType, address;
+   private String validityDate;
+   private int cardNo, cost, accountNo, cvv, routingNo, paymentID;
    int phoneNo;
    
    LocalTime timeOpened = LocalTime.now();
