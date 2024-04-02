@@ -48,7 +48,7 @@ public class AirportTest {
    public void testGetFlights() {
       test.makeFlight("Flight1", "2024-03-10", "$200", "Destination1", "Departure1", "Arrival1",
                       "2 hours", 150, 50, 100, "A1", "Terminal1", "Gate1");
-      Flight[] flight1 = test.getFlights();
-      assertEquals("Flight1", flight1[0].getName()); 
+      Flight[] flights = test.getFlights();
+      assertEquals("Flight1", flights[0].getName()); 
    }
 }
