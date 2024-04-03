@@ -12,8 +12,8 @@ public class FlightTest {
    @Before public void setUp() {
    }
 
-   Flight test = new Flight("Flight1", "2024-03-10", "$200", "Destination1", "Departure1", "Arrival1",
-                      "2 hours", 150, 50, 100, "A1", "Terminal1", "Gate1");
+   Flight test = new Flight("Flight1", "LAX", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+                "Terminal1", 1, 150, 50, 100, "$200", "2 hours", false);
 
    /** A test that always passes. **/
    @Test public void defaultTest() {
@@ -32,15 +32,15 @@ public class FlightTest {
       assertEquals("Flight2", test.getName());
    }
    
-   // Test for getting and setting date
+   // Test for getting and setting gate
    @Test
-   public void testGetFlightDate() {
-      assertEquals("2024-03-10", test.getDate());
+   public void testGetFlightGate() {
+      assertEquals(1, test.getGate());
    }
    @Test
-   public void testSetFlightDate() {
-      test.setDate("2024-03-11");
-      assertEquals("2024-03-11", test.getDate());
+   public void testSetFlightGate() {
+      test.setGate(22);
+      assertEquals(22, test.getGate());
    }
    
    // Test for getting and setting cost
@@ -54,37 +54,26 @@ public class FlightTest {
       assertEquals("$250", test.getCost());
    }
    
-   // Test for getting and setting destination
-   @Test
-   public void testGetFlightDestination() {
-      assertEquals("Destination1", test.getDestination());
-   }
-   @Test
-   public void testSetFlightDestination() {
-      test.setDestination("Destination2");
-      assertEquals("Destination2", test.getDestination());
-   }
-   
    // Test for getting and setting departure
    @Test
    public void testGetFlightDeparture() {
-      assertEquals("Departure1", test.getDeparture());
+      assertEquals("LAX", test.getDepartAirport());
    }
    @Test
    public void testSetFlightDeparture() {
-      test.setDeparture("Departure2");
-      assertEquals("Departure2", test.getDeparture());
+      test.setDepartAirport("Departure2");
+      assertEquals("Departure2", test.getDepartAirport());
    }
    
    // Test for getting and setting arrival
    @Test
    public void testGetFlightArrival() {
-      assertEquals("Arrival1", test.getArrival());
+      assertEquals("BNA", test.getArrivalAirport());
    }
    @Test
    public void testSetFlightArrival() {
-      test.setArrival("Arrival2");
-      assertEquals("Arrival2", test.getArrival());
+      test.setArrivalAirport("Airport2");
+      assertEquals("Airport2", test.getArrivalAirport());
    }
    
    // Test for getting and setting duration
@@ -131,15 +120,15 @@ public class FlightTest {
       assertEquals(90, test.getAvailableSeats());
    }
    
-   // Test for getting and setting seat name
+   // Test for getting and setting total seats
    @Test
-   public void testGetFlightSeatName() {
-      assertEquals("A1", test.getSeatName());
+   public void testGetTotalSeats() {
+      assertEquals(150, test.getTotalSeats());
    }
    @Test
-   public void testSetFlightSeatName() {
-      test.setSeatName("B1");
-      assertEquals("B1", test.getSeatName());
+   public void testSetTotalSeats() {
+      test.setTotalSeats(200);
+      assertEquals(200, test.getTotalSeats());
    }
    
    // Test for getting and setting terminal
@@ -151,16 +140,5 @@ public class FlightTest {
    public void testSetFlightTerminal() {
       test.setTerminal("Terminal2");
       assertEquals("Terminal2", test.getTerminal());
-   }
-   
-   // Test for getting and setting gate
-   @Test
-   public void testGetFlightGate() {
-      assertEquals("Gate1", test.getGate());
-   }
-   @Test
-   public void testSetFlightGate() {
-      test.setGate("Gate2");
-      assertEquals("Gate2", test.getGate());
    }
 }
