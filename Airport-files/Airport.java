@@ -11,15 +11,15 @@ public class Airport {
         this.numFlights = 0; // Initialize the number of flights
     }
 
-    public void makeFlight(String name, String departAirport, String arrivalAirport, String departDate, String arrivalDate, String departTime,
-                            String arrivalTime, String terminal, int gate, int totalSeats, int takenSeats,
-                            int availableSeats, String cost, String duration) {
+    public void makeFlight(String name, String departAirport, String arrivalAirport, String departDate, String arrivalDate,
+                       String departTime, String arrivalTime, String terminal, int gate, int totalSeats, int takenSeats,
+                       int availableSeats, String cost, String duration, boolean bookStatus) {
         // Check if the array has space for a new flight
         if (numFlights < 5) {
-            // Create a new Flight object
-            Flight newFlight = new Flight(name, departAirport, arrivalAirport, departDate, arrivalDate, departTime, arrivalTime, terminal,
-                    gate, totalSeats, takenSeats, availableSeats, cost, duration);
-
+        // Create a new Flight object
+        Flight newFlight = new Flight(name, departAirport, arrivalAirport, departDate, arrivalDate, departTime,
+                arrivalTime, terminal, gate, totalSeats, takenSeats, availableSeats, cost, duration, bookStatus);
+                
             // Add the new flight to the array
             flights[numFlights] = newFlight;
 
