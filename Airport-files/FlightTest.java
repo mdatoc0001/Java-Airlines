@@ -141,4 +141,15 @@ public class FlightTest {
       test.setTerminal("Terminal2");
       assertEquals("Terminal2", test.getTerminal());
    }
+   
+   //Test for book status
+   @Test
+   public void testGetBookStatus() {
+      assertEquals(false, test.getBookStatus());
+   }
+   @Test
+   public void testSetBookStatus() {
+      test.setBookStatus(true);
+      assertEquals(true, test.getBookStatus());
+   }
 }
