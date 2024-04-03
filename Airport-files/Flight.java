@@ -1,6 +1,8 @@
+// importing java library
 import java.util.Arrays;
-
+// Flight Class
 public class Flight {
+    // declaring variables
     private String name;
     private String departAirport;
     private String arrivalAirport;
@@ -16,6 +18,7 @@ public class Flight {
     private String cost;
     private String duration;
     private boolean bookStatus;
+    // Constructor method
     public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, int g, int ts, int tas, int as, String c, String d, boolean b) {
         this.name = n;
         this.departAirport = da;
@@ -129,7 +132,7 @@ public class Flight {
    public void setBookStatus(boolean b) {
        this.bookStatus = b;
    }
-
+   // Implemented toString method to combine all variables of the flight for user readability.
    public String toString() {
        return getName() + " " + getDepartAirport() + " " + getArrivalAirport() + " " + getDepartDate() + " " + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration() + " " + getBookStatus();
    }
