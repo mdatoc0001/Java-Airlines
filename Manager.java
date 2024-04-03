@@ -6,6 +6,9 @@ import java.util.Arrays;
 
 public class Manager {
     // classifying attributes
+
+    private String name = "Manager";
+
     private int numReservations();
     private int numFlightsFull();
     private int numFlightsOpen();
