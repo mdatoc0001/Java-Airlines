@@ -15,7 +15,8 @@ public class Flight {
     private int availableSeats;
     private String cost;
     private String duration;
-    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, int g, int ts, int tas, int as, String c, String d) {
+    private boolean bookStatus;
+    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, int g, int ts, int tas, int as, String c, String d, boolean b) {
         this.name = n;
         this.departAirport = da;
         this.arrivalAirport = aa;
@@ -30,6 +31,7 @@ public class Flight {
         this.availableSeats = as;
         this.cost = c;
         this.duration = d;
+        this.bookStatus = b;
     }
     
     //Getters
@@ -75,6 +77,10 @@ public class Flight {
     public String getDuration() {
         return this.duration;
     }
+
+    public boolean getBookStatus() {
+        return this.bookStatus;
+    }
     
     //Setters
     public void setName(String n) {
@@ -118,6 +124,10 @@ public class Flight {
    }
    public void setDuration(String d) {
        this.duration = d;
+   }
+
+   public void setBookStatus(boolean b) {
+       this.bookStatus = b;
    }
 
    public String toString() {
