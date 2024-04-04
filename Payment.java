@@ -7,6 +7,7 @@ public class Payment {
    private String validityDate;
    private int cardNo, cost, accountNo, cvv, routingNo, paymentID;
    int phoneNo;
+   private boolean paymentStatus;
    
    LocalTime timeOpened = LocalTime.now();
    Date dateOpened = new Date();
@@ -72,6 +73,7 @@ public class Payment {
             case 3:
                System.out.println("See you later!");
                System.out.println("***************************");
+               paymentStatus = false;
                System.exit(1);
                break;
             default:
@@ -111,9 +113,11 @@ public class Payment {
       String response=scanner.next();
       if (response.equals("yes")) {
          generateID();
+         paymentStatus = true;
          System.out.println("Your Payment ID: " + paymentID);
          System.out.println("Thank you for your payment");
       } else {
+         paymentStatus = false;
          System.out.println("Review amount in the reservation details and come back");
          System.out.println("***************************");
          System.exit(0);
@@ -171,9 +175,11 @@ public class Payment {
       String response = scanner.next();
       if (response.equals("yes")) {
          generateID();
+         paymentStatus = true;
          System.out.println("Your Payment ID: " + paymentID);
          System.out.println("Thank you for your payment");
       } else {
+         paymentStatus = false;
          System.out.println("Review amount in the reservation details and come back");
          System.out.println("***************************");
          System.exit(0);
