@@ -8,10 +8,12 @@ public class Manager {
     // classifying attributes
 
     private String name = "Manager";
+    private Flight flight;
+    private Airport airport;
 
-    private int numReservations();
-    private int numFlightsFull();
-    private int numFlightsOpen();
+    private int numReservations;
+    private int numFlightsFull;
+    private int numFlightsOpen;
     
 
     
