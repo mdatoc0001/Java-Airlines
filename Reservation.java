@@ -24,7 +24,12 @@ public class Reservation {
 
     // Setters
     public void setFlight(Flight flight) {
-        this.flight = flight;
+        if(flight.getBookStatus() == false) {
+           this.flight = flight;
+        }
+        else {
+           System.out.println("Error, flight is already booked.");
+        }
     }
 
     public void setAirport(Airport airport) {
