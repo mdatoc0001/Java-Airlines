@@ -3,11 +3,20 @@ import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Payment {
-   String paymentMethod, cardType, name, accountType, address;
+   private String paymentMethod;
+   private String cardType;
+   private String name;
+   private String accountType;
+   private String address;
    private String validityDate;
-   private int cardNo, cost, accountNo, cvv, routingNo, paymentID;
-   int phoneNo;
+   private String cost;
    private boolean paymentStatus;
+   protected int cardNo;
+   protected int accountNo;
+   protected int cvv;
+   protected int routingNo;
+   protected int paymentID;
+   public int phoneNo;
    
    LocalTime timeOpened = LocalTime.now();
    Date dateOpened = new Date();
