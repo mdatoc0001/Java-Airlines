@@ -127,28 +127,7 @@ public class AirportGUI extends Application {
     }
 
     private void displayFlightInfo(Flight flight, GridPane grid3) {   
-        
-        /*
-        Label nameLabel = new Label("Name: " + flight.getName());
-        Label costLabel = new Label("Cost: " + flight.getCost());
-        Label durationLabel = new Label("Duration: " + flight.getDuration());
-        Label totalSeatsLabel = new Label("Total Seats: " + flight.getTotalSeats());
-        Label takenSeatsLabel = new Label("Taken Seats: " + flight.getTakenSeats());
-        Label availableSeatsLabel = new Label("Available Seats: " + flight.getAvailableSeats());
-        Label terminalLabel = new Label("Terminal: " + flight.getTerminal());
-        Label gateLabel = new Label("Gate: " + flight.getGate());
-
-        // Add labels to grid
-        grid3.add(nameLabel, 0, 0);
-        grid3.add(costLabel, 0, 1);
-        grid3.add(durationLabel, 0, 2);
-        grid3.add(totalSeatsLabel, 0, 3);
-        grid3.add(takenSeatsLabel, 0, 4);
-        grid3.add(availableSeatsLabel, 0, 5);
-        grid3.add(terminalLabel, 0, 6);
-        grid3.add(gateLabel, 0, 7);
-        */
-        
+          
        // Create labels for each variable of Flight
        Label nameLabel = new Label("Flight Number: " + flight.getName());
        Label departAirportLabel = new Label("Departure Airport: " + flight.getDepartAirport());
