@@ -42,7 +42,6 @@ public class Payment {
          System.out.println("Card No: " + cardNo); 
          System.out.println("CVV: " + cvv); 
          System.out.println("Valid Thru: " + validityDate);
-         System.out.println("Total Amount paid: " + cost);
          System.out.println("Payment ID: " + paymentID);
          System.out.println("Payment date:" + dateOpened);
          System.out.println("Payment Time" + timeOpened);
