@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneReservationController">
+   <children>
+      <Button layoutX="148.0" layoutY="173.0" mnemonicParsing="false" onAction="#LAX" prefHeight="54.0" prefWidth="104.0" text="LAX" />
+      <Button layoutX="348.0" layoutY="173.0" mnemonicParsing="false" onAction="#JFK" prefHeight="54.0" prefWidth="104.0" text="JFK" />
+      <Label alignment="CENTER" layoutX="160.0" layoutY="74.0" prefHeight="35.0" prefWidth="281.0" text="Please select an airport:" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+   </children>
+</AnchorPane>
