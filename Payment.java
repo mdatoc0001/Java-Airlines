@@ -2,19 +2,14 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Payment {
-   private String paymentMethod;
    private String cardType;
    private String name;
-   private String address;
    private String validityDate;
    private String cost;
    private boolean paymentStatus;
    protected int cardNo;
-   protected int accountNo;
    protected int cvv;
-   protected int routingNo;
    protected int paymentID;
-   public int phoneNo;
 
    public Payment(String cost) {
       this.cost = cost;
@@ -32,34 +27,18 @@ public class Payment {
    }
    
    public void displayPaymentInfo() {
-      System.out.println("***************************");
+      System.out.println("*****************");
       System.out.println("Payment Details: ");
       System.out.println("*****************");
-      System.out.println("Payment Method: " + paymentMethod);
-      if (paymentMethod.equals("banktransfer")) { //selection1
-         System.out.println("Name of Account Holder: " + name);
-         System.out.println("Billing Address: " + address);
-         System.out.println("Phone no: " + phoneNo);
-         System.out.println("Account no: " + accountNo);
-         System.out.println("Routing no: " + routingNo);
-         System.out.println("Payment ID: " + paymentID);
-         System.out.println("Payment Date and Time:" + paymentDate); 
-         System.out.println("Total Amount paid: " + getCost()); 
-         System.out.println("***************************"); 
-      } else { //selection2
-         System.out.println("***************************");
-         System.out.println("Card Type: " + cardType);
-         System.out.println("Name of Card Holder: " + name);
-         System.out.println("Billing Address: " + address);
-         System.out.println("Phone no: " + phoneNo);
-         System.out.println("Card No: " + cardNo); 
-         System.out.println("CVV: " + cvv); 
-         System.out.println("Valid Thru: " + validityDate);
-         System.out.println("Payment ID: " + paymentID);
-         System.out.println("Payment Date and Time:" + paymentDate);
-         System.out.println("Total Amount paid: " + getCost());
-         System.out.println("***************************");
-      }
+      System.out.println("Card Type: " + cardType);
+      System.out.println("Name of Card Holder: " + name);
+      System.out.println("Card No: " + cardNo); 
+      System.out.println("CVV: " + cvv); 
+      System.out.println("Valid Thru: " + validityDate);
+      System.out.println("Payment ID: " + paymentID);
+      System.out.println("Payment Date and Time:" + paymentDate);
+      System.out.println("Total Amount paid: " + getCost());
+      System.out.println("*****************");
    }
    
    public void Payment() {
@@ -69,20 +48,16 @@ public class Payment {
          System.out.println("****************************");
          System.out.println("Enter Payment Details below:");
          System.out.println("****************************");
-         System.out.println("1. Pay by Bank transfer");
-         System.out.println("2. Pay by Debit/Credit card");
-         System.out.println("3. Make payment later");
+         System.out.println("1. Pay by Debit/Credit card");
+         System.out.println("2. Make payment later");
          System.out.print("\nEnter selection:");
          selection = scanner.nextInt();
       
          switch(selection) {
             case 1:
-               bankTransfer();
-               break;
-            case 2:
                card();
                break;
-            case 3:
+            case 2:
                System.out.println("\n**************");
                System.out.println("See you later!");
                System.out.println("**************");
@@ -90,70 +65,21 @@ public class Payment {
                System.exit(1);
                break;
             default:
-               System.out.println("\nInvalid Selection! Please select a number from 1 to 3");
+               System.out.println("\nInvalid Selection! Please select option 1 or 2");
                System.out.println(" ");
                break;
          }
       }
    }
-   public void bankTransfer() {
-      Scanner scanner = new Scanner(System.in);
-      paymentMethod="banktransfer";
-      System.out.println("***************************");
-      System.out.println("Enter the name of account holder: ");
-      name = scanner.nextLine();
-      
-      System.out.println("Enter billing address: ");
-      address = scanner.nextLine();
-      
-      System.out.println("Enter Phone no: ");
-      phoneNo = scanner.nextInt();
-      scanner.nextLine();
-      
-      System.out.println("Enter Account no: ");
-      accountNo = scanner.nextInt();
-      scanner.nextLine();
-      
-      System.out.println("Enter Rounting no: ");
-      routingNo = scanner.nextInt();
-      scanner.nextLine();
-      
-      System.out.println("Total amount: " + getCost());
-      
-      System.out.println("Confirm payement? yes/no"); 
-      String response=scanner.next();
-      if (response.equals("yes")) {
-         generateID();
-         paymentStatus = true;
-         System.out.println(" ");
-         System.out.println("***************************");
-         System.out.println("Thank you for your payment");
-         displayPaymentInfo();
-         System.exit(0);
-      } else {
-         paymentStatus = false;
-         System.out.println("Review amount in the reservation details and come back");
-         System.out.println("***************************");
-         System.exit(0);
-      }
-   }
    
    public void card() {
       Scanner scanner = new Scanner(System.in);
-      paymentMethod = "card";
       System.out.println("***************************");
       System.out.println("Enter Card Type(D for Debit/C for Credit): ");  
       cardType = scanner.nextLine();
      
       System.out.println("Enter name of card holder: ");
       name = scanner.nextLine();
-      
-      System.out.println("Enter Billing Address: ");
-      address = scanner.nextLine();
-      
-      System.out.println("Enter Phone no: ");
-      phoneNo = scanner.nextInt();
-      scanner.nextLine();
                   
       System.out.println("Card No: "); 
       cardNo = scanner.nextInt();
@@ -194,14 +120,12 @@ public class Payment {
    }
 
    //Generates random transaction ID for each successful transcation
-   public void generateID() 
-   {
+   public void generateID() {
      paymentID = (int)(Math.random() * 5000000 +2000);
    }
    
    //Checks the length of cvv no. for validation
-   public int cvvLength(int cvv)
-   {
+   public int cvvLength(int cvv) {
       int temp = cvv;
       int length = 0;
       while(temp > 0)
