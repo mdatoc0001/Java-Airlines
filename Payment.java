@@ -11,88 +11,88 @@ public class Payment {
    protected int cvv;
    protected int paymentID;
    
-public Payment(String cardType, String name, String validityDate, String cost, boolean paymentStatus, int cardNo, int cvv, int paymentID) {
-   this.cardType = cardType;
-   this.name = name;
-   this.validityDate = validityDate; 
-   this.cost = cost;
-   this.paymentStatus = paymentStatus;
-   this.cardNo = cardNo;
-   this.cvv = cvv;
-   this.paymentID = paymentID;
-}
+   public Payment(String cardType, String name, String validityDate, String cost, boolean paymentStatus, int cardNo, int cvv, int paymentID) {
+      this.cardType = cardType;
+      this.name = name;
+      this.validityDate = validityDate; 
+      this.cost = cost;
+      this.paymentStatus = paymentStatus;
+      this.cardNo = cardNo;
+      this.cvv = cvv;
+      this.paymentID = paymentID;
+   }
    
-//Getters
-public String getCardType() {
-   return this.cardType;
-}
+   //Getters
+   public String getCardType() {
+      return this.cardType;
+   }
    
-public String getName() {
-   return this.name;
-}
+   public String getName() {
+      return this.name;
+   }
    
-public String getValidityDate() {
-   return this.validityDate;
-}
+   public String getValidityDate() {
+      return this.validityDate;
+   }
    
-public String getCost() {
-   return this.cost;
-}
+   public String getCost() {
+      return this.cost;
+   }
    
-public boolean getPaymentStatus() {
-   return this.paymentStatus;
-}
+   public boolean getPaymentStatus() {
+      return this.paymentStatus;
+   }
    
-public int getCardNo() {
-   return this.cardNo;
-}
+   public int getCardNo() {
+      return this.cardNo;
+   }
    
-public int getCvv() {
-   return this.cvv;
-}
+   public int getCvv() {
+      return this.cvv;
+   }
    
-public int getPaymentID() {
-   return this.paymentID;
-}
+   public int getPaymentID() {
+      return this.paymentID;
+   }
      
-//Setters
-public String setCardType() {
-   return this.cardType;
-}
+   //Setters
+   public void setCardType(String cardType) {
+      this.cardType = cardType;
+   }
    
-public String setName() {
-   return this.name;
-}
+   public void setName(String name) {
+      this.name = name;
+   }
    
-public String setValidityDate() {
-   return this.validityDate;
-}
+   public void setValidityDate(String validityDate) {
+      this.validityDate = validityDate;
+   }
    
-public String setCost() {
-   return this.cost;
-}
+   public void setCost(String cost) {
+      this.cost = cost;
+   }
    
-public boolean setPaymentStatus() {
-   return this.paymentStatus;
-}
+   public void setPaymentStatus(boolean paymentStatus) {
+      this.paymentStatus = paymentStatus;
+   }
    
-public int setCardNo() {
-   return this.cardNo;
-}
+   public void setCardNo(int cardNo) {
+      this.cardNo = cardNo;
+   }
    
-public int setCvv() {
-   return this.cvv;
-}
+   public void setCvv(int cvv) {
+      this.cvv = cvv;
+   }
    
-public int setPaymentID() {
-   return this.paymentID;
-}
+   public void setPaymentID(int paymentID) {
+      this.paymentID = paymentID;
+   }
    
-Date paymentDate = new Date();
+   Date paymentDate = new Date();
    
-public Date getpaymentDate() {
-   return paymentDate;
-}
+   public Date getpaymentDate() {
+      return paymentDate;
+   }
    
    public void displayPaymentInfo() {
       System.out.println("*****************");
