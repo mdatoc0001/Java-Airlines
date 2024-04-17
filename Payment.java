@@ -22,16 +22,77 @@ public Payment(String cardType, String name, String validityDate, String cost, b
    this.paymentID = paymentID;
 }
    
-   //Getter
-   public String getCost() {
-      return this.cost;
-   }
+//Getters
+public String getCardType() {
+   return this.cardType;
+}
    
-   Date paymentDate = new Date();
+public String getName() {
+   return this.name;
+}
    
-   public Date getpaymentDate() {
-      return paymentDate;
-   }
+public String getValidityDate() {
+   return this.validityDate;
+}
+   
+public String getCost() {
+   return this.cost;
+}
+   
+public boolean getPaymentStatus() {
+   return this.paymentStatus;
+}
+   
+public int getCardNo() {
+   return this.cardNo;
+}
+   
+public int getCvv() {
+   return this.cvv;
+}
+   
+public int getPaymentID() {
+   return this.paymentID;
+}
+     
+//Setters
+public String setCardType() {
+   return this.cardType;
+}
+   
+public String setName() {
+   return this.name;
+}
+   
+public String setValidityDate() {
+   return this.validityDate;
+}
+   
+public String setCost() {
+   return this.cost;
+}
+   
+public boolean setPaymentStatus() {
+   return this.paymentStatus;
+}
+   
+public int setCardNo() {
+   return this.cardNo;
+}
+   
+public int setCvv() {
+   return this.cvv;
+}
+   
+public int setPaymentID() {
+   return this.paymentID;
+}
+   
+Date paymentDate = new Date();
+   
+public Date getpaymentDate() {
+   return paymentDate;
+}
    
    public void displayPaymentInfo() {
       System.out.println("*****************");
