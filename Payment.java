@@ -10,10 +10,17 @@ public class Payment {
    protected int cardNo;
    protected int cvv;
    protected int paymentID;
-
-   public Payment(String cost) {
-      this.cost = cost;
-   }
+   
+public Payment(String cardType, String name, String validityDate, String cost, boolean paymentStatus, int cardNo, int cvv, int paymentID) {
+   this.cardType = cardType;
+   this.name = name;
+   this.validityDate = validityDate; 
+   this.cost = cost;
+   this.paymentStatus = paymentStatus;
+   this.cardNo = cardNo;
+   this.cvv = cvv;
+   this.paymentID = paymentID;
+}
    
    //Getter
    public String getCost() {
