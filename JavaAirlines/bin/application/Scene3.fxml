@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene3Controller">
+   <children>
+      <TextField fx:id="nameTextField2" layoutX="226.0" layoutY="95.0" promptText="First Last" />
+      <TextField fx:id="AgeTextField" layoutX="226.0" layoutY="161.0" />
+      <TextField fx:id="phoneNumTextField" layoutX="226.0" layoutY="193.0" promptText="###-###-####" />
+      <TextField fx:id="PassportTextField" layoutX="226.0" layoutY="256.0" promptText="E0000####" />
+      <TextField fx:id="CountryTextField" layoutX="226.0" layoutY="225.0" />
+      <Label layoutX="190.0" layoutY="99.0" text="Name:" />
+      <Label layoutX="201.0" layoutY="165.0" text="Age:" />
+      <Label layoutX="198.0" layoutY="14.0" text="Profile Creation">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="181.0" layoutY="197.0" text="Phone#: " />
+      <Label layoutX="130.0" layoutY="229.0" text="Country of Origin:" />
+      <Label layoutX="167.0" layoutY="260.0" text="Passport #:" />
+      <TextField fx:id="UserNameTextField" layoutX="226.0" layoutY="128.0" promptText="Username" />
+      <Label layoutX="168.0" layoutY="132.0" text="Username:" />
+      <Button layoutX="224.0" layoutY="330.0" mnemonicParsing="false" onAction="#CreateProfile" text="Create Profile" />
+      <Label fx:id="errorPrompt2" alignment="CENTER" layoutX="187.0" layoutY="59.0" prefHeight="17.0" prefWidth="226.0" text="Welcome" textAlignment="CENTER" />
+      <Button layoutX="329.0" layoutY="330.0" mnemonicParsing="false" onAction="#loginPage" text="Login" />
+      <Label layoutX="167.0" layoutY="295.0" text="Password:" />
+      <PasswordField fx:id="PasswordTextField" layoutX="226.0" layoutY="291.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+   </children>
+</AnchorPane>
