@@ -15,6 +15,15 @@ public class Manager {
     private int numFlightsFull;
     private int numFlightsOpen;
     
-
+    public int getNumReservations() {
+        
+        return numReservations;
+    }
+    public int getNumFlightsFull() {
+        return numFlightsFull;
+    }
+    public int getNumFlightsOpen() {
+        return numFlightsOpen;
+    }
     
 }
