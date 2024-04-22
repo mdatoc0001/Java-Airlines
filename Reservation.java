@@ -121,7 +121,6 @@ public class Reservation {
         reservation2.confirmReservation();
         System.out.println(reservation2.toString());
         
-        
          UserInfo user3 = UserInfo.getInstance();
          user3.setUserInfo("Emily Johnson", "emilyj345", "25", "9876543210", "Canada", "WXYZ5678", "password123");
          airport.makeFlight("Flight 789", "LAX", "ORD", "2024-05-15", "2024-05-15", "10:00 AM", "1:30 PM",
@@ -165,35 +164,35 @@ public class Reservation {
          airport2.makeFlight("Flight 123", "JFK", "LAX", "2024-09-15", "2024-09-15", "9:30 AM", "12:00 PM",
                              "Terminal A", 20, 180, 60, 120, "$250", "2.5 hours", false);
          flights2 = airport2.getFlights();
-         Reservation reservation11 = new Reservation(user7, flights2[1], airport2);
-         reservation11.confirmReservation();
-         System.out.println(reservation11.toString());
+         Reservation reservation7 = new Reservation(user7, flights2[1], airport2);
+         reservation7.confirmReservation();
+         System.out.println(reservation7.toString());
          
          UserInfo user8 = UserInfo.getInstance();
          user8.setUserInfo("Isabella Wilson", "izzyw890", "29", "8889990000", "France", "IJKL2324", "password456");
          airport2.makeFlight("Flight 456", "JFK", "SFO", "2024-10-20", "2024-10-20", "3:00 PM", "6:00 PM",
                              "Terminal B", 15, 200, 80, 120, "$300", "3 hours", false);
          flights2 = airport2.getFlights();
-         Reservation reservation12 = new Reservation(user8, flights2[2], airport2);
-         reservation12.confirmReservation();
-         System.out.println(reservation12.toString());
+         Reservation reservation8 = new Reservation(user8, flights2[2], airport2);
+         reservation8.confirmReservation();
+         System.out.println(reservation8.toString());
          
          UserInfo user9 = UserInfo.getInstance();
          user9.setUserInfo("Oliver Parker", "oliverp345", "34", "1112223333", "Canada", "LMNO2526", "password789");
          airport2.makeFlight("Flight 789", "JFK", "ORD", "2024-11-25", "2024-11-25", "6:00 AM", "9:30 AM",
                              "Terminal C", 25, 170, 50, 120, "$200", "3.5 hours", false);
          flights2 = airport2.getFlights();
-         Reservation reservation13 = new Reservation(user9, flights2[3], airport2);
-         reservation13.confirmReservation();
-         System.out.println(reservation13.toString());
+         Reservation reservation9 = new Reservation(user9, flights2[3], airport2);
+         reservation9.confirmReservation();
+         System.out.println(reservation9.toString());
          
          UserInfo user10 = UserInfo.getInstance();
          user10.setUserInfo("Amelia Harris", "ameliah789", "31", "4445556666", "UK", "PQRS2728", "passwordabc");
          airport2.makeFlight("Flight 542", "JFK", "MIA", "2024-12-30", "2024-12-30", "8:30 PM", "11:00 PM",
                              "Terminal D", 30, 190, 70, 120, "$280", "2.5 hours", false);
          flights2 = airport2.getFlights();
-         Reservation reservation14 = new Reservation(user10, flights2[4], airport2);
-         reservation14.confirmReservation();
-         System.out.println(reservation14.toString());
+         Reservation reservation10 = new Reservation(user10, flights2[4], airport2);
+         reservation10.confirmReservation();
+         System.out.println(reservation10.toString());
     }
 }
