@@ -1,0 +1,10 @@
+John Smith,johnnySmith123,30,1234567890,USA,ABCD1234,password
+George Baldwin,gbald245,20,5554443327,USA,ABCD1234,password
+Emily Johnson,emilyj345,25,9876543210,Canada,WXYZ5678,password123
+Sophia Smith,sophias890,35,1231231234,UK,EFGH9101,password456
+Michael Davis,miked123,30,4564564567,Australia,IJKL1112,password789
+Emma Thompson,emmat567,28,7897897890,France,LMNO1314,passwordabc
+Daniel Brown,danb456,33,5556667777,Germany,EFGH2122,password123
+Isabella Wilson,izzyw890,29,8889990000,France,IJKL2324,password456
+Oliver Parker,oliverp345,34,1112223333,Canada,LMNO2526,password789
+Amelia Harris,ameliah789,31,4445556666,UK,PQRS2728,passwordabc
