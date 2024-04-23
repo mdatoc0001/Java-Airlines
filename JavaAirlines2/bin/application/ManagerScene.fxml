@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerSceneController">
+   <children>
+      <Label alignment="CENTER" layoutX="58.0" layoutY="14.0" prefHeight="53.0" prefWidth="484.0" text="Manager Portal" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="58.0" layoutY="207.0" mnemonicParsing="false" text="Reservation Count" />
+      <Button layoutX="250.0" layoutY="207.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Full Flights" />
+      <Button layoutX="458.0" layoutY="207.0" mnemonicParsing="false" text="Flights Open" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+   </children>
+</AnchorPane>
