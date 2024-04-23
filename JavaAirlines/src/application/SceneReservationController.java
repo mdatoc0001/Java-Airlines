@@ -21,10 +21,10 @@ public class SceneReservationController {
 		selectedAirport = new Airport("LAX");
 		
         selectedAirport.makeFlight("Flight1", "LAX", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-          "Terminal17", 1, 150, 50, 100, "$200", "2 hours", false);
+          "Terminal17", "1", "150", "50", "100", "$200", "2 hours", "false");
 
         selectedAirport.makeFlight("Flight2", "LAX", "JFK", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-          "Terminal100", 1, 150, 50, 100, "$200", "2 hours", false);
+          "Terminal100", "1", "150", "50", "100", "$200", "2 hours", "false");
 
 		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("LAX.fxml"));
@@ -39,10 +39,10 @@ public void JFK(ActionEvent event) throws IOException {
 		
 	selectedAirport = new Airport("JFK");
     selectedAirport.makeFlight("Flight3", "JFK", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal78", 1, 150, 50, 100, "$200", "2 hours", false);
+      "Terminal78", "1", "150", "50", "100", "$200", "2 hours", "false");
 
     selectedAirport.makeFlight("Flight4", "JFK", "LAX", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal54", 1, 150, 50, 100, "$200", "2 hours", false);
+      "Terminal54", "1", "150", "50", "100", "$200", "2 hours", "false");
     
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("JFK.fxml"));
 		root = loader.load();

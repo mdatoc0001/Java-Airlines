@@ -14,7 +14,23 @@ public class UserInfo {
 		return instance;
 	}
 	
-
+	public UserInfo (String[] userInfoData) {
+    	
+    	if (userInfoData.length == 7) {
+    	
+        this.Name = userInfoData[0];
+        this.userName = userInfoData[1];
+        this.Age = userInfoData[2];
+        this.Phone = userInfoData[3];
+        this.Country = userInfoData[4];
+        this.Passport = userInfoData[5];
+        this.Password = userInfoData[6];
+        
+    	} else {
+            throw new IllegalArgumentException("Invalid flight data");
+        }
+    }
+	
 	public void setUserInfo(String one, String two, String three, String four, String five, String six, String seven) {
 		
 		Name = one;
@@ -63,5 +79,9 @@ public class UserInfo {
 		
 		//nameLabel.setText("Welcome " + userName);
 	}
+	
+	public String toString() {
+	       return getName() + " " + getUserName() + " " + getAge() + " " + getPhone() + " " + getCountry() + " " + getPassport() + " " + getPassword();
+	   }
 
 }

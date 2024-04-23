@@ -30,7 +30,6 @@ public class Flight {
     private String cost;
     private String duration;
     private String bookStatus;
-    private String status;
     // Constructor method
     public Flight (String[] flightDetails) {
     	
@@ -123,12 +122,12 @@ public void setFlight (Flight flightDetails) {
 
     public String getBookStatus() {
     	if(this.bookStatus.equals("true")){
-    		 status = "Available";
+    		 bookStatus = "Booked";
     	}
     	if(this.bookStatus.equals("false")){
-    		 status = "Booked";
+    		 bookStatus = "Available";
     	}
-        return status;
+        return bookStatus;
     }
     
     //Setters

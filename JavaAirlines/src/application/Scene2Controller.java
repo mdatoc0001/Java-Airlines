@@ -210,7 +210,7 @@ try {
     if(num == 1) {
     	
     Flight flight2 = flights.get(1);
-    System.out.println("Second Flight:");
+    System.out.println(flights.get(1).getName());
     System.out.println(flight2);
     
     details.setFlight(flight2);
