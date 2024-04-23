@@ -18,13 +18,13 @@ public class UserInfo {
     	
     	if (userInfoData.length == 7) {
     	
-        this.Name = userInfoData[0];
-        this.userName = userInfoData[1];
-        this.Age = userInfoData[2];
-        this.Phone = userInfoData[3];
-        this.Country = userInfoData[4];
-        this.Passport = userInfoData[5];
-        this.Password = userInfoData[6];
+    		this.Name = userInfoData[0];
+    		this.userName = userInfoData[1];
+    		this.Age = userInfoData[2];
+    		this.Phone = userInfoData[3];
+    		this.Country = userInfoData[4];
+    		this.Passport = userInfoData[5];
+    		this.Password = userInfoData[6];
         
     	} else {
             throw new IllegalArgumentException("Invalid flight data");
