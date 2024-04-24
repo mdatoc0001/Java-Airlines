@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitMenuButton layoutX="177.0" layoutY="200.0" mnemonicParsing="false" text="Data to Change">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Flight Name" />
+            <MenuItem mnemonicParsing="false" text="Departing City" />
+            <MenuItem mnemonicParsing="false" text="Arrival CIty" />
+            <MenuItem mnemonicParsing="false" text="Departing Date" />
+            <MenuItem mnemonicParsing="false" text="Arrival Date" />
+            <MenuItem mnemonicParsing="false" text="Departing Time" />
+            <MenuItem mnemonicParsing="false" text="Arrival Time" />
+            <MenuItem mnemonicParsing="false" text="Terminal" />
+            <MenuItem mnemonicParsing="false" text="Gate" />
+            <MenuItem mnemonicParsing="false" text="TotalSeats" />
+            <MenuItem mnemonicParsing="false" text="TakenSeats" />
+            <MenuItem mnemonicParsing="false" text="Available Seats" />
+            <MenuItem mnemonicParsing="false" text="Cost" />
+            <MenuItem mnemonicParsing="false" text="Duration" />
+            <MenuItem mnemonicParsing="false" text="Book Status" />
+        </items>
+      </SplitMenuButton>
+   </children>
+</AnchorPane>

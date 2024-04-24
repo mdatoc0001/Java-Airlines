@@ -8,7 +8,7 @@ public class Airport {
     
     public Airport(String name) {
         this.name = name;
-        this.flights = new Flight[100]; // Initialize the array with 100 flights
+        this.flights = new Flight[20]; // Initialize the array with 100 flights
         this.numFlights = 0; // Initialize the number of flights
     }
 

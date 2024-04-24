@@ -121,12 +121,6 @@ public void setFlight (Flight flightDetails) {
     }
 
     public String getBookStatus() {
-    	if(this.bookStatus.equals("true")){
-    		 bookStatus = "Booked";
-    	}
-    	if(this.bookStatus.equals("false")){
-    		 bookStatus = "Available";
-    	}
         return bookStatus;
     }
     
