@@ -14,12 +14,12 @@ import java.io.Writer;
 
 
 public class Manager {
-    // classifying attributes
-
-    private String name = "Manager";
+    
+	// classifying attributes
+	
+    private String username = "Manager";
+    private String password = "Java123";
     private Flight flight;
-    private Airport airport;
-    private UserInfo user;
 
     private int reservationCount = 0;
     List<Flight> reservedFlights = new ArrayList<>();
@@ -28,7 +28,17 @@ public class Manager {
     private int numFlightsOpen = 0;
     List<Flight> openFlights = new ArrayList<>();
     
+    //Gets Manager username
+    public String getUsername() {
+    	return username;
+    }
     
+    //Gets Manager password
+    public String getPassword() {
+    	return password;
+    }
+    
+    //Sets reserved flights list and count
     public void setReservedFlights(List<Flight> list) {
     	for (int i=0; i<list.size(); i++) {
         	if (list.get(i).getBookStatus().equals("Booked")) {
@@ -38,14 +48,17 @@ public class Manager {
         }
     }
     
+    //Gets number of reserved flights
     public int getReservationCount() {
         return reservationCount;
     }
     
+    //Gets list of reserved flights
     public List<Flight> getReservedFlights() {
     	return reservedFlights;
     }
     
+    //Sets open and full flights list and flight open or full count
     public void setFlightsOpenStatus(List<Flight> list) {
     	for (int i=0; i<list.size(); i++) {
         	if (list.get(i).getTotalSeats().equals(list.get(i).getTakenSeats())) {
@@ -58,18 +71,22 @@ public class Manager {
         }
     }
     
+    //Gets number of Flights Full
     public int getNumFlightsFull() {
         return numFlightsFull;
     }
     
+    //Gets list of Flights full
     public List<Flight> getFlightsFull() {
     	return fullFlights;
     }
     
+    //Gets number of Flights Open
     public int getNumFlightsOpen() {
         return numFlightsOpen;
     }
     
+    //Gets List of Flights Open
     public List<Flight> getFlightsOpen() {
     	return openFlights;
     }
@@ -82,52 +99,58 @@ public class Manager {
     	output.close();
     }
     
+    //Gets specific flight data based on flight name chosen
+    public Flight getFlight(List<Flight> list, String name) {
+    	
+    	for (int i=0; i<list.size(); i++) {
+        	if (list.get(i).getName().equals(name)) {
+        		flight = list.get(i);
+        	}
+        }
+    	return flight;
+    }
+    
     //Update Flight Data
-    public void changeFlightInfo(String flight, String attribute, String data) {
-    	//for (int i=0; i<)
+    public void changeFlightInfo(Flight flight, String attribute, String data) {
     	if (attribute.equals("Flight Name") ) {
-    		
+    		flight.setName(data);
     	} else if (attribute.equals("Departing City")) {
-    		
+    		flight.setDepartAirport(data);
     	} else if (attribute.equals("Arrival City")) {
-    		
+    		flight.setArrivalAirport(data);
     	} else if (attribute.equals("Departing Date")) {
-    		
+    		flight.setDepartDate(data);
     	} else if (attribute.equals("Arrival Date")) {
-    		
+    		flight.setArrivalDate(data);
     	} else if (attribute.equals("Departing Time")) {
-    		
+    		flight.setDepartTime(data);
     	} else if (attribute.equals("Arrival Time")) {
-    		
+    		flight.setArrivalTime(data);
     	} else if (attribute.equals("Terminal")) {
-    		
+    		flight.setTerminal(data);
     	} else if (attribute.equals("Gate")) {
-    		
+    		flight.setGate(data);
     	} else if (attribute.equals("Total Seats")) {
-    		
+    		flight.setTotalSeats(data);
     	} else if (attribute.equals("Taken Seats")) {
-    		
+    		flight.setTakenSeats(data);
     	} else if (attribute.equals("Available Seats")) {
-    		
+    		flight.setAvailableSeats(data);
     	} else if (attribute.equals("Cost")) {
-    		
+    		flight.setCost(data);
     	} else if (attribute.equals("Duration")) {
-    		
+    		flight.setDuration(data);
     	} else if (attribute.equals("Book Status")) {
-    		
+    		flight.setBookStatus(data);
     	}
     }
     
-    
-    public void terminateFlight(List<Flight> list, String flightName) {
-    	for (int i=0; i<list.size(); i++) {
-        	if (list.get(i).getName().equals(flightName)) {
-        		list.get(i).setBookStatus("Terminated");
-        		break;
-        	}
-        }
+    //Terminates Flight
+    public void terminateFlight(Flight flight) {
+        flight.setBookStatus("Terminated");
     }
     
+    //Main method
     public static void main(String[] Args) throws IOException {
     	UserInfoParser parser = new UserInfoParser();
     	List<UserInfo> userInfoList = parser.readUserDataFromTXT("src//application//UserInfo.txt");
