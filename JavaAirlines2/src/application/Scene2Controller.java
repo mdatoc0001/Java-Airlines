@@ -28,7 +28,8 @@ public class Scene2Controller {
 	//private GridPane grid3;
 	//private Scene flightInfoScene;
 	
-	private Airport selectedAirport;
+	private Airport lax = new Airport("LAX");
+   private Airport jfk = new Airport("JFK");
 	
 	//FlightParser parser = new FlightParser();
 	//String fileName1 = "src//application//Flight1.txt";
@@ -107,12 +108,11 @@ public void LAX(ActionEvent event) throws IOException {
 	//Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 
 	//System.out.println(LAX);
-	selectedAirport = new Airport("LAX");
 	
-    selectedAirport.makeFlight("Flight1", "LAX", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+    lax.makeFlight("Flight1", "LAX", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
       "Terminal17", 1, 150, 50, 100, "$200", "2 hours", false);
 
-    selectedAirport.makeFlight("Flight2", "LAX", "JFK", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+    lax.makeFlight("Flight2", "LAX", "JFK", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
       "Terminal100", 1, 150, 50, 100, "$200", "2 hours", false);
 
 
@@ -129,12 +129,10 @@ public void JFK(ActionEvent event) throws IOException {
 	
 	//System.out.println(LAX);
 	
-	selectedAirport = new Airport("JFK");
-	
-    selectedAirport.makeFlight("Flight3", "JFK", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+    jfk.makeFlight("Flight3", "JFK", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
       "Terminal78", 1, 150, 50, 100, "$200", "2 hours", false);
 
-    selectedAirport.makeFlight("Flight4", "JFK", "LAX", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+    jfk.makeFlight("Flight4", "JFK", "LAX", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
       "Terminal54", 1, 150, 50, 100, "$200", "2 hours", false);
     
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightSelection.fxml"));
@@ -186,7 +184,7 @@ public void Back4(ActionEvent event) throws IOException {
 }
 
 public void Flight1(ActionEvent event) throws IOException {
-	Flight[] flights = selectedAirport.getFlights();
+	Flight[] flights = lax.getFlights();
     if (flights.length > 0) {
         
         displayFlightInfo(flights[0]);
@@ -205,17 +203,18 @@ public void Flight1(ActionEvent event) throws IOException {
 }
 public void Flight2(ActionEvent event) throws IOException {
 	
-	Flight[] flights = selectedAirport.getFlights();
-    if (flights.length > 1) {
+	Flight[] flights = lax.getFlights();
+    if (flights != null && flights.length > 1) {
         //grid3.getChildren().clear(); // Clear previous labels
 
         displayFlightInfo(flights[1]);
         //stage.setScene(flightInfoScene);
     } else {
         System.out.println("No second flight available for the selected airport.");
+        return; // no flights available
     }
    
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
+   FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
 	root = loader.load();
 	
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
