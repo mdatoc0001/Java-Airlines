@@ -135,7 +135,7 @@ public void JFK(ActionEvent event) throws IOException {
     jfk.makeFlight("Flight4", "JFK", "LAX", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
       "Terminal54", 1, 150, 50, 100, "$200", "2 hours", false);
     
-	FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightSelection.fxml"));
+	FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightSelection2.fxml"));
 	root = loader.load();
 	
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -190,7 +190,7 @@ public void Flight1(ActionEvent event) throws IOException {
         displayFlightInfo(flights[0]);
         
     } else {
-        System.out.println("No flights available for the selected airport.");
+        System.out.println("No flights available for LAX.");
     }
     
     FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
@@ -210,7 +210,46 @@ public void Flight2(ActionEvent event) throws IOException {
         displayFlightInfo(flights[1]);
         //stage.setScene(flightInfoScene);
     } else {
-        System.out.println("No second flight available for the selected airport.");
+        System.out.println("No second flight available for LAX.");
+        return; // no flights available
+    }
+   
+   FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
+	root = loader.load();
+	
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
+	stage.show();
+}
+public void Flight3(ActionEvent event) throws IOException {
+	Flight[] flights = jfk.getFlights();
+    if (flights.length > 0) {
+        
+        displayFlightInfo(flights[0]);
+        
+    } else {
+        System.out.println("No flights available for JFK.");
+    }
+    
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
+	root = loader.load();
+	
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
+	stage.show();
+}
+public void Flight4(ActionEvent event) throws IOException {
+	
+	Flight[] flights = jfk.getFlights();
+    if (flights != null && flights.length > 1) {
+        //grid3.getChildren().clear(); // Clear previous labels
+
+        displayFlightInfo(flights[1]);
+        //stage.setScene(flightInfoScene);
+    } else {
+        System.out.println("No second flight available for JFK.");
         return; // no flights available
     }
    
@@ -256,4 +295,3 @@ private void displayFlightInfo(Flight flight) {
 
  }
 }
-
