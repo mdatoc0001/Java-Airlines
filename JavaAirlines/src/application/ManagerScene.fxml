@@ -12,16 +12,16 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="221.0" layoutY="141.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="View All Flight Data" />
-      <Button layoutX="221.0" layoutY="221.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="View Reserved Flights" />
-      <Button layoutX="221.0" layoutY="181.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="View Open Flights" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+      <Button fx:id="viewAllFlightDataButton" layoutX="221.0" layoutY="141.0" mnemonicParsing="false" onAction="#viewAllFlightData" prefHeight="26.0" prefWidth="166.0" text="View All Flight Data" />
+      <Button fx:id="viewReservedFlightsButton" layoutX="221.0" layoutY="221.0" mnemonicParsing="false" onAction="#viewReservedFlights" prefHeight="26.0" prefWidth="166.0" text="View Reserved Flights" />
+      <Button fx:id="viewOpenFlights" layoutX="221.0" layoutY="181.0" mnemonicParsing="false" onAction="#viewOpenFlights" prefHeight="26.0" prefWidth="166.0" text="View Open Flights" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
       <Label layoutX="196.0" layoutY="96.0" prefHeight="17.0" prefWidth="209.0" text="What would you like to do?">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="221.0" layoutY="260.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Change Flight Info" />
-      <Button layoutX="221.0" layoutY="300.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Terminate Flight" />
+      <Button fx:id="changeFlightInfoButton" layoutX="221.0" layoutY="260.0" mnemonicParsing="false" onAction="#changeFlightInfo" prefHeight="26.0" prefWidth="166.0" text="Change Flight Info" />
+      <Button fx:id="terminateFlightButton" layoutX="221.0" layoutY="300.0" mnemonicParsing="false" onAction="#terminateFlight" prefHeight="26.0" prefWidth="166.0" text="Terminate Flight" />
    </children>
 </AnchorPane>
