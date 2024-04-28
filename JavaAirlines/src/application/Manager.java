@@ -17,16 +17,14 @@ public class Manager {
     private String password;
     private Flight flight;
 
-    private int reservationCount = 0;
-    List<Flight> reservedFlights = new ArrayList<>();
-    private int numFlightsOpen = 0;
-    List<Flight> openFlights = new ArrayList<>();
+    List<String> reservedFlights = new ArrayList<>();
+    List<String> openFlights = new ArrayList<>();
+    List<String> allFlights = new ArrayList<>();
     
+    // Constructor
     public Manager() {
     	username = "Manager";
     	password = "Java123";
-    	reservationCount = 0;
-    	numFlightsOpen = 0;
     }
     
     //Gets Manager Username
@@ -39,45 +37,31 @@ public class Manager {
     	return password;
     }
     
-    //Sets reserved flights list and count
-    public void setReservedFlights(List<Flight> flights) {
-    	reservationCount = 0;
+    //Gets list of names of all Flights
+    public List<String> getAllFlights(List<Flight> flights) {
+    	for (int i=0; i<flights.size(); i++) {
+    		allFlights.add(flights.get(i).getName());
+        }
+    	return allFlights;
+    }
+    
+    //Gets list of names of Reserved Flights
+    public List<String> getReservedFlights(List<Flight> flights) {
     	for (int i=0; i<flights.size(); i++) {
         	if (flights.get(i).getBookStatus().equals("Booked")) {
-        		reservationCount++;
-        		reservedFlights.add(flights.get(i));
+        		reservedFlights.add(flights.get(i).getName());
         	}
         }
-    }
-    
-    //Gets number of reserved flights
-    public int getReservationCount() {
-        return reservationCount;
-    }
-    
-    //Gets list of reserved flights
-    public List<Flight> getReservedFlights() {
     	return reservedFlights;
     }
     
-    //Sets open and full flights list and flight open or full count
-    public void setFlightsOpenStatus(List<Flight> flights) {
-    	numFlightsOpen = 0;
+    //Gets list of names of Open Flights
+    public List<String> getOpenFlights(List<Flight> flights) {
     	for (int i=0; i<flights.size(); i++) {
-        	if (!(flights.get(i).getTotalSeats().equals(flights.get(i).getTakenSeats()))) {
-        		numFlightsOpen++;
-        		openFlights.add(flights.get(i));
+        	if (flights.get(i).getBookStatus().equals("Available")) {
+        		openFlights.add(flights.get(i).getName());
         	}
         }
-    }
-    
-    //Gets number of Flights Open
-    public int getNumFlightsOpen() {
-        return numFlightsOpen;
-    }
-    
-    //Gets List of Flights Open
-    public List<Flight> getFlightsOpen() {
     	return openFlights;
     }
     
