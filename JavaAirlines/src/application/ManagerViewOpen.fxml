@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerViewOpenController">
    <children>
       <Label alignment="CENTER" layoutX="58.0" layoutY="14.0" prefHeight="53.0" prefWidth="484.0" text="Manager Portal" textAlignment="CENTER">
          <font>
@@ -14,11 +13,11 @@
          </font>
       </Label>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
-      <Label alignment="TOP_LEFT" layoutX="67.0" layoutY="84.0" prefHeight="247.0" prefWidth="466.0" text="Open Flight Data:">
+      <Label fx:id="openFlightDataText" alignment="TOP_LEFT" layoutX="67.0" layoutY="84.0" prefHeight="247.0" prefWidth="466.0" text="Open Flight Data:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="278.0" layoutY="342.0" mnemonicParsing="false" text="View" />
+      <Button fx:id="viewButton" layoutX="278.0" layoutY="342.0" mnemonicParsing="false" onAction="#view" text="View" />
    </children>
 </AnchorPane>

@@ -27,9 +27,19 @@
 			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/Manager.java</location>
 		</link>
 		<link>
+			<name>src/application/ManagerEditController.java</name>
+			<type>1</type>
+			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerEditController.java</location>
+		</link>
+		<link>
 			<name>src/application/ManagerTerminate.fxml</name>
 			<type>1</type>
 			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerTerminate.fxml</location>
+		</link>
+		<link>
+			<name>src/application/ManagerTerminateController.java</name>
+			<type>1</type>
+			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerTerminateController.java</location>
 		</link>
 		<link>
 			<name>src/application/ManagerViewAll.fxml</name>
@@ -37,14 +47,29 @@
 			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerViewAll.fxml</location>
 		</link>
 		<link>
+			<name>src/application/ManagerViewAllController.java</name>
+			<type>1</type>
+			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerViewAllController.java</location>
+		</link>
+		<link>
 			<name>src/application/ManagerViewOpen.fxml</name>
 			<type>1</type>
 			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerViewOpen.fxml</location>
 		</link>
 		<link>
+			<name>src/application/ManagerViewOpenController.java</name>
+			<type>1</type>
+			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerViewOpenController.java</location>
+		</link>
+		<link>
 			<name>src/application/ManagerViewReserved.fxml</name>
 			<type>1</type>
 			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerViewReserved.fxml</location>
+		</link>
+		<link>
+			<name>src/application/ManagerViewReservedController.java</name>
+			<type>1</type>
+			<location>/Users/madeline/classes/comp380/my_project_workspace/Java-Airlines/JavaAirlines/src/application/ManagerViewReservedController.java</location>
 		</link>
 	</linkedResources>
 </projectDescription>

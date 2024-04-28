@@ -1,12 +1,8 @@
 package application;
 //importing java libraries
-import java.util.Date;
 import java.util.List;
 import java.io.IOException;
-import java.time.LocalTime;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.Writer;
@@ -17,18 +13,23 @@ public class Manager {
     
 	// classifying attributes
 	
-    private String username = "Manager";
-    private String password = "Java123";
+    private String username;
+    private String password;
     private Flight flight;
 
     private int reservationCount = 0;
     List<Flight> reservedFlights = new ArrayList<>();
-    private int numFlightsFull = 0;
-    List<Flight> fullFlights = new ArrayList<>();
     private int numFlightsOpen = 0;
     List<Flight> openFlights = new ArrayList<>();
     
-    //Gets Manager username
+    public Manager() {
+    	username = "Manager";
+    	password = "Java123";
+    	reservationCount = 0;
+    	numFlightsOpen = 0;
+    }
+    
+    //Gets Manager Username
     public String getUsername() {
     	return username;
     }
@@ -39,11 +40,12 @@ public class Manager {
     }
     
     //Sets reserved flights list and count
-    public void setReservedFlights(List<Flight> list) {
-    	for (int i=0; i<list.size(); i++) {
-        	if (list.get(i).getBookStatus().equals("Booked")) {
+    public void setReservedFlights(List<Flight> flights) {
+    	reservationCount = 0;
+    	for (int i=0; i<flights.size(); i++) {
+        	if (flights.get(i).getBookStatus().equals("Booked")) {
         		reservationCount++;
-        		reservedFlights.add(list.get(i));
+        		reservedFlights.add(flights.get(i));
         	}
         }
     }
@@ -59,26 +61,14 @@ public class Manager {
     }
     
     //Sets open and full flights list and flight open or full count
-    public void setFlightsOpenStatus(List<Flight> list) {
-    	for (int i=0; i<list.size(); i++) {
-        	if (list.get(i).getTotalSeats().equals(list.get(i).getTakenSeats())) {
-        		numFlightsFull++;
-        		fullFlights.add(list.get(i));
-        	} else {
+    public void setFlightsOpenStatus(List<Flight> flights) {
+    	numFlightsOpen = 0;
+    	for (int i=0; i<flights.size(); i++) {
+        	if (!(flights.get(i).getTotalSeats().equals(flights.get(i).getTakenSeats()))) {
         		numFlightsOpen++;
-        		openFlights.add(list.get(i));
+        		openFlights.add(flights.get(i));
         	}
         }
-    }
-    
-    //Gets number of Flights Full
-    public int getNumFlightsFull() {
-        return numFlightsFull;
-    }
-    
-    //Gets list of Flights full
-    public List<Flight> getFlightsFull() {
-    	return fullFlights;
     }
     
     //Gets number of Flights Open
@@ -91,20 +81,12 @@ public class Manager {
     	return openFlights;
     }
     
-    //Write Flight Data to Flights.txt
-    public void addFlight(String newFlight) throws IOException {
-    	Writer output;
-    	output = new BufferedWriter(new FileWriter("src//application//Flights.txt", true)); 
-    	output.append(newFlight);
-    	output.close();
-    }
-    
     //Gets specific flight data based on flight name chosen
-    public Flight getFlight(List<Flight> list, String name) {
+    public Flight getFlight(List<Flight> flights, String name) {
     	
-    	for (int i=0; i<list.size(); i++) {
-        	if (list.get(i).getName().equals(name)) {
-        		flight = list.get(i);
+    	for (int i=0; i<flights.size(); i++) {
+        	if (flights.get(i).getName().equals(name)) {
+        		flight = flights.get(i);
         	}
         }
     	return flight;
