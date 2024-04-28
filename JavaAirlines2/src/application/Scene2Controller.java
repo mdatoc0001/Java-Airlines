@@ -42,20 +42,20 @@ public class Scene2Controller {
 	private Airport lax = new Airport("LAX");
    {
     lax.makeFlight("F1", "LAX", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal17", 1, 150, 50, 100, "$200", "2 hours", false);
+      "Terminal17", "1", "150", "50", "100", "$200", "2 hours", "false");
 
     lax.makeFlight("F2", "LAX", "JFK", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal100", 1, 150, 50, 100, "$200", "2 hours", false);
+      "Terminal100", "1", "150", "50", "100", "$200", "2 hours", "false");
     flights1 = lax.getFlights();
    }
       
    private Airport jfk = new Airport("JFK");
    {
     jfk.makeFlight("F3", "JFK", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-                "Terminal78", 1, 150, 50, 100, "$200", "2 hours", false);
+                "Terminal78", "1", "150", "50", "100", "$200", "2 hours", "false");
 
     jfk.makeFlight("F4", "JFK", "LAX", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-                "Terminal54", 1, 150, 50, 100, "$200", "2 hours", false);
+                "Terminal54", "1", "150", "50", "100", "$200", "2 hours", "false");
     flights2 = jfk.getFlights();
    }
 	
@@ -309,7 +309,7 @@ private void displayFlightInfo(Flight flight) {
         availableSeatsLabel.setText("Available Seats: " + selectedFlight.getAvailableSeats());
         costLabel.setText("Cost: " + selectedFlight.getCost());
         durationLabel.setText("Duration: " + selectedFlight.getDuration());
-        bookStatusLabel.setText("Booking Status: " + (selectedFlight.getBookStatus() ? "Booked" : "Available"));
+        bookStatusLabel.setText("Booking Status: " + (selectedFlight.getBookStatus()));
     } else {
         // Handle case where no flight is selected
         nameLabel2.setText("No flight selected");

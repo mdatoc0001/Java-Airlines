@@ -13,15 +13,15 @@ public class Flight {
     private String departTime;
     private String arrivalTime;
     private String terminal;
-    private int gate;
-    private int totalSeats;
-    private int takenSeats;
-    private int availableSeats;
+    private String gate;
+    private String totalSeats;
+    private String takenSeats;
+    private String availableSeats;
     private String cost;
     private String duration;
-    private boolean bookStatus;
+    private String bookStatus;
     // Constructor method
-    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, int g, int ts, int tas, int as, String c, String d, boolean b) {
+    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
         this.name = n;
         this.departAirport = da;
         this.arrivalAirport = aa;
@@ -64,16 +64,16 @@ public class Flight {
     public String getTerminal() {
         return this.terminal;
     }
-    public int getGate() {
+    public String getGate() {
         return this.gate;
     }
-    public int getTotalSeats() {
+    public String getTotalSeats() {
         return this.totalSeats;
     }
-    public int getTakenSeats() {
+    public String getTakenSeats() {
         return this.takenSeats;
     }
-    public int getAvailableSeats() {
+    public String getAvailableSeats() {
       return this.availableSeats;
     }
     public String getCost() {
@@ -83,7 +83,7 @@ public class Flight {
         return this.duration;
     }
 
-    public boolean getBookStatus() {
+    public String getBookStatus() {
         return this.bookStatus;
     }
     
@@ -112,16 +112,16 @@ public class Flight {
    public void setTerminal(String t) {
        this.terminal = t;
    }
-   public void setGate(int g) {
+   public void setGate(String g) {
        this.gate = g;
    }
-   public void setTotalSeats(int ts) {
+   public void setTotalSeats(String ts) {
        this.totalSeats = ts;
    }
-   public void setTakenSeats(int tas) {
+   public void setTakenSeats(String tas) {
        this.takenSeats = tas;
    }
-   public void setAvailableSeats(int as) {
+   public void setAvailableSeats(String as) {
        this.availableSeats = as;
    }
    public void setCost(String c) {
@@ -131,7 +131,7 @@ public class Flight {
        this.duration = d;
    }
 
-   public void setBookStatus(boolean b) {
+   public void setBookStatus(String b) {
        this.bookStatus = b;
    }
    // Implemented toString method to combine all variables of the flight for user readability.
