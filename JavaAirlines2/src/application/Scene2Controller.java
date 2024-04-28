@@ -24,12 +24,40 @@ public class Scene2Controller {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+   
+   //
+   private Flight selectedFlight;
+   
+   public void setSelectedFlight(Flight flight) {
+       this.selectedFlight = flight;
+   }
+   
+   private Flight[] flights1;
+   private Flight[] flights2;
+   //
 	
 	//private GridPane grid3;
 	//private Scene flightInfoScene;
 	
 	private Airport lax = new Airport("LAX");
+   {
+    lax.makeFlight("F1", "LAX", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+      "Terminal17", 1, 150, 50, 100, "$200", "2 hours", false);
+
+    lax.makeFlight("F2", "LAX", "JFK", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+      "Terminal100", 1, 150, 50, 100, "$200", "2 hours", false);
+    flights1 = lax.getFlights();
+   }
+      
    private Airport jfk = new Airport("JFK");
+   {
+    jfk.makeFlight("F3", "JFK", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+                "Terminal78", 1, 150, 50, 100, "$200", "2 hours", false);
+
+    jfk.makeFlight("F4", "JFK", "LAX", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
+                "Terminal54", 1, 150, 50, 100, "$200", "2 hours", false);
+    flights2 = jfk.getFlights();
+   }
 	
 	//FlightParser parser = new FlightParser();
 	//String fileName1 = "src//application//Flight1.txt";
@@ -108,14 +136,7 @@ public void LAX(ActionEvent event) throws IOException {
 	//Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 
 	//System.out.println(LAX);
-	
-    lax.makeFlight("Flight1", "LAX", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal17", 1, 150, 50, 100, "$200", "2 hours", false);
-
-    lax.makeFlight("Flight2", "LAX", "JFK", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal100", 1, 150, 50, 100, "$200", "2 hours", false);
-
-
+    
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightSelection.fxml"));
 	root = loader.load();
 	
@@ -128,12 +149,6 @@ public void JFK(ActionEvent event) throws IOException {
 	//Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 	
 	//System.out.println(LAX);
-	
-    jfk.makeFlight("Flight3", "JFK", "BNA", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal78", 1, 150, 50, 100, "$200", "2 hours", false);
-
-    jfk.makeFlight("Flight4", "JFK", "LAX", "2024-03-10", "2024-03-10", "Departure1", "Arrival1",
-      "Terminal54", 1, 150, 50, 100, "$200", "2 hours", false);
     
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightSelection2.fxml"));
 	root = loader.load();
@@ -176,7 +191,7 @@ public void Back4(ActionEvent event) throws IOException {
 	
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightSelection.fxml"));
 	root = loader.load();
-	
+   
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -184,82 +199,84 @@ public void Back4(ActionEvent event) throws IOException {
 }
 
 public void Flight1(ActionEvent event) throws IOException {
-	Flight[] flights = lax.getFlights();
-    if (flights.length > 0) {
-        
-        displayFlightInfo(flights[0]);
-        
+   //Flight[] flights = lax.getFlights();
+   flights1 = lax.getFlights();
+    if (flights1.length > 0) {    
+        selectedFlight = flights1[0];
     } else {
         System.out.println("No flights available for LAX.");
     }
     
     FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
 	root = loader.load();
-	
-	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	scene = new Scene(root);
-	stage.setScene(scene);
-	stage.show();
-}
-public void Flight2(ActionEvent event) throws IOException {
-	
-	Flight[] flights = lax.getFlights();
-    if (flights != null && flights.length > 1) {
-        //grid3.getChildren().clear(); // Clear previous labels
-
-        displayFlightInfo(flights[1]);
-        //stage.setScene(flightInfoScene);
-    } else {
-        System.out.println("No second flight available for LAX.");
-        return; // no flights available
-    }
    
-   FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
-	root = loader.load();
-	
+   Scene2Controller controller = loader.getController();
+    controller.setSelectedFlight(selectedFlight); // Set the selected flight
+    controller.displayFlightInfo(selectedFlight);
+    
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
-	stage.show();
+   }
+public void Flight2(ActionEvent event) throws IOException {
+   //Flight[] flights = lax.getFlights();
+   flights1 = lax.getFlights();
+    if (flights1.length > 0) {    
+        selectedFlight = flights1[1];
+    } else {
+        System.out.println("No flights available for LAX.");
+    }
+    
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
+	root = loader.load();
+   
+   Scene2Controller controller = loader.getController();
+    controller.setSelectedFlight(selectedFlight); // Set the selected flight
+    controller.displayFlightInfo(selectedFlight);
+    
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
 }
 public void Flight3(ActionEvent event) throws IOException {
-	Flight[] flights = jfk.getFlights();
-    if (flights.length > 0) {
-        
-        displayFlightInfo(flights[0]);
-        
+   //Flight[] flights = jfk.getFlights();
+   flights2 = jfk.getFlights();
+    if (flights2.length > 0) {    
+        selectedFlight = flights2[0];
     } else {
         System.out.println("No flights available for JFK.");
     }
     
     FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
 	root = loader.load();
-	
+   
+   Scene2Controller controller = loader.getController();
+    controller.setSelectedFlight(selectedFlight); // Set the selected flight
+    controller.displayFlightInfo(selectedFlight);
+    
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
-	stage.show();
 }
 public void Flight4(ActionEvent event) throws IOException {
-	
-	Flight[] flights = jfk.getFlights();
-    if (flights != null && flights.length > 1) {
-        //grid3.getChildren().clear(); // Clear previous labels
-
-        displayFlightInfo(flights[1]);
-        //stage.setScene(flightInfoScene);
+   //Flight[] flights = jfk.getFlights();
+   flights2 = jfk.getFlights();
+    if (flights2.length > 1) {    
+        selectedFlight = flights2[1];
     } else {
-        System.out.println("No second flight available for JFK.");
-        return; // no flights available
+        System.out.println("No flights available for JFK.");
     }
-   
-   FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
+    
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightInfo.fxml"));
 	root = loader.load();
-	
+   
+   Scene2Controller controller = loader.getController();
+    controller.setSelectedFlight(selectedFlight); // Set the selected flight
+    controller.displayFlightInfo(selectedFlight);
+    
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
-	stage.show();
 }
 public void Forward(ActionEvent event) throws IOException {
 	//Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
@@ -275,23 +292,41 @@ public void Forward(ActionEvent event) throws IOException {
 }
 
 private void displayFlightInfo(Flight flight) {   
-    
     // Create labels for each variable of Flight
-     nameLabel.setText("Flight Number: " + flight.getName());
-     departAirportLabel.setText("Departure Airport: " + flight.getDepartAirport());
-     arrivalAirportLabel.setText("Arrival Airport: " + flight.getArrivalAirport());
-     departDateLabel.setText("Departure Date: " + flight.getDepartDate());
-     arrivalDateLabel.setText("Arrival Date: " + flight.getArrivalDate());
-     departTimeLabel.setText("Departure Time: " + flight.getDepartTime());
-     arrivalTimeLabel.setText("Arrival Time: " + flight.getArrivalTime());
-     terminalLabel.setText("Terminal: " + flight.getTerminal());
-     gateLabel.setText("Gate: " + flight.getGate());
-     totalSeatsLabel.setText("Total Seats: " + flight.getTotalSeats());
-     takenSeatsLabel.setText("Taken Seats: " + flight.getTakenSeats());
-     availableSeatsLabel.setText("Available Seats: " + flight.getAvailableSeats());
-     costLabel.setText("Cost: " + flight.getCost());
-     durationLabel.setText("Duration: " + flight.getDuration());
-     bookStatusLabel.setText("Booking Status: " + (flight.getBookStatus() ? "Booked" : "Available"));
-
- }
+         
+     if (selectedFlight != null) {
+        nameLabel2.setText("Flight Number: " + selectedFlight.getName());
+        departAirportLabel.setText("Departure Airport: " + selectedFlight.getDepartAirport());
+        arrivalAirportLabel.setText("Arrival Airport: " + selectedFlight.getArrivalAirport());
+        departDateLabel.setText("Departure Date: " + selectedFlight.getDepartDate());
+        arrivalDateLabel.setText("Arrival Date: " + selectedFlight.getArrivalDate());
+        departTimeLabel.setText("Departure Time: " + selectedFlight.getDepartTime());
+        arrivalTimeLabel.setText("Arrival Time: " + selectedFlight.getArrivalTime());
+        terminalLabel.setText("Terminal: " + selectedFlight.getTerminal());
+        gateLabel.setText("Gate: " + selectedFlight.getGate());
+        totalSeatsLabel.setText("Total Seats: " + selectedFlight.getTotalSeats());
+        takenSeatsLabel.setText("Taken Seats: " + selectedFlight.getTakenSeats());
+        availableSeatsLabel.setText("Available Seats: " + selectedFlight.getAvailableSeats());
+        costLabel.setText("Cost: " + selectedFlight.getCost());
+        durationLabel.setText("Duration: " + selectedFlight.getDuration());
+        bookStatusLabel.setText("Booking Status: " + (selectedFlight.getBookStatus() ? "Booked" : "Available"));
+    } else {
+        // Handle case where no flight is selected
+        nameLabel2.setText("No flight selected");
+        departAirportLabel.setText("");
+        arrivalAirportLabel.setText("");
+        departDateLabel.setText("");
+        arrivalDateLabel.setText("");
+        departTimeLabel.setText("");
+        arrivalTimeLabel.setText("");
+        terminalLabel.setText("");
+        gateLabel.setText("");
+        totalSeatsLabel.setText("");
+        takenSeatsLabel.setText("");
+        availableSeatsLabel.setText("");
+        costLabel.setText("");
+        durationLabel.setText("");
+        bookStatusLabel.setText("");
+    } 
+  }
 }
