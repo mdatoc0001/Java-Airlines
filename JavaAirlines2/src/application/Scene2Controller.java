@@ -189,7 +189,7 @@ public void Back4(ActionEvent event) throws IOException {
 	//Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 	
 	
-	FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightSelection.fxml"));
+	FXMLLoader loader = new FXMLLoader(getClass().getResource("AirportSelection.fxml"));
 	root = loader.load();
    
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
