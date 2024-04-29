@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,14 +13,16 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="272.0" layoutY="232.0" mnemonicParsing="false" onAction="#Submit" text="Submit" />
-      <Label layoutX="194.0" layoutY="119.0" prefHeight="29.0" prefWidth="213.0" text="Name of Flight to Terminate:">
+      <Button layoutX="272.0" layoutY="293.0" mnemonicParsing="false" onAction="#Submit" text="Submit" />
+      <Label layoutX="87.0" layoutY="78.0" prefHeight="29.0" prefWidth="213.0" text="Name of Flight to Terminate:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="flightName" layoutX="220.0" layoutY="175.0" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
-      <Label fx:id="confirmationText" alignment="CENTER" layoutX="225.0" layoutY="273.0" prefHeight="20.0" prefWidth="150.0" />
+      <Label fx:id="confirmationText" alignment="CENTER" layoutX="225.0" layoutY="334.0" prefHeight="20.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboBox" layoutX="322.0" layoutY="80.0" onAction="#chooseFlight" prefWidth="150.0" promptText="Choose Flight" />
+      <Label fx:id="textBox1" alignment="TOP_LEFT" layoutX="136.0" layoutY="124.0" prefHeight="169.0" prefWidth="164.0" text="Flight Details:" />
+      <Label fx:id="textBox2" alignment="TOP_LEFT" layoutX="300.0" layoutY="124.0" prefHeight="169.0" prefWidth="164.0" />
    </children>
 </AnchorPane>
