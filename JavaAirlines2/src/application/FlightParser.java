@@ -7,6 +7,8 @@ import java.util.List;
 
 public class FlightParser {
     
+	// Reads Flight info by line from text file
+	
 	public List<Flight> readFlightsFromTXT(String filePath) throws IOException {
         List<Flight> flights = new ArrayList<>();
 

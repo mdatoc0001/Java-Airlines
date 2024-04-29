@@ -21,7 +21,26 @@ public class Flight {
     private String duration;
     private String bookStatus;
     
-    // Constructor method for String of Flight Details
+    // Constructor method using manual string parameters
+    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
+        this.name = n;
+        this.departCity = da;
+        this.arrivalCity = aa;
+        this.departDate = dd;
+        this.arrivalDate = ad;
+        this.departTime = dt;
+        this.arrivalTime = at;
+        this.terminal = t;
+        this.gate = g;
+        this.totalSeats = ts;
+        this.takenSeats = tas;
+        this.availableSeats = as;
+        this.cost = c;
+        this.duration = d;
+        this.bookStatus = b;
+    }
+    
+    // Constructor method for String List of Flight Details
     public Flight (String[] flightDetails) {
     	
     	if (flightDetails.length == 15) {
@@ -47,6 +66,8 @@ public class Flight {
             throw new IllegalArgumentException("Invalid flight data");
         }
     }
+    
+    // Set Flight details based on Flight object
     public void setFlight (Flight flightDetails) {
     	
         this.name = flightDetails.getName();
@@ -67,25 +88,6 @@ public class Flight {
       
     }
     
-    // Constructor method
-    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
-        this.name = n;
-        this.departCity = da;
-        this.arrivalCity = aa;
-        this.departDate = dd;
-        this.arrivalDate = ad;
-        this.departTime = dt;
-        this.arrivalTime = at;
-        this.terminal = t;
-        this.gate = g;
-        this.totalSeats = ts;
-        this.takenSeats = tas;
-        this.availableSeats = as;
-        this.cost = c;
-        this.duration = d;
-        this.bookStatus = b;
-    }
-    
     //Getters
     public String getName() {
          return this.name;
@@ -98,7 +100,7 @@ public class Flight {
     }
     public String getDepartDate() {
         return this.departDate;
-   }
+    }
     public String getArrivalDate() {
          return this.arrivalDate;
     }
@@ -137,52 +139,52 @@ public class Flight {
     //Setters
     public void setName(String n) {
         this.name = n;
-   }
-   public void setDepartCity(String da) {
+    }
+    public void setDepartCity(String da) {
         this.departCity = da;
-   }
-   public void setArrivalCity(String aa) {
+    }
+    public void setArrivalCity(String aa) {
         this.arrivalCity = aa;
-   }
-   public void setDepartDate(String dd) {
+    }
+    public void setDepartDate(String dd) {
        this.departDate = dd;
-  }
-   public void setArrivalDate(String ad) {
+    }
+    public void setArrivalDate(String ad) {
         this.arrivalDate = ad;
-   }
-   public void setDepartTime(String dt) {
+    }
+    public void setDepartTime(String dt) {
         this.departTime = dt;
-   }
-   public void setArrivalTime(String at) {
+    }
+    public void setArrivalTime(String at) {
         this.arrivalTime = at;
-   }
-   public void setTerminal(String t) {
-       this.terminal = t;
-   }
-   public void setGate(String g) {
-       this.gate = g;
-   }
-   public void setTotalSeats(String ts) {
-       this.totalSeats = ts;
-   }
-   public void setTakenSeats(String tas) {
-       this.takenSeats = tas;
-   }
-   public void setAvailableSeats(String as) {
-       this.availableSeats = as;
-   }
-   public void setCost(String c) {
-       this.cost = c;
-   }
-   public void setDuration(String d) {
-       this.duration = d;
-   }
-
-   public void setBookStatus(String b) {
-       this.bookStatus = b;
-   }
-   // Implemented toString method to combine all variables of the flight for user readability.
-   public String toString() {
-       return getName() + " " + getDepartCity() + " " + getArrivalCity() + " " + getDepartDate() + " " + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration() + " " + getBookStatus();
-   }
+    }
+    public void setTerminal(String t) {
+        this.terminal = t;
+    }
+    public void setGate(String g) {
+        this.gate = g;
+    }
+    public void setTotalSeats(String ts) {
+        this.totalSeats = ts;
+    }
+    public void setTakenSeats(String tas) {
+        this.takenSeats = tas;
+    }
+    public void setAvailableSeats(String as) {
+        this.availableSeats = as;
+    }
+    public void setCost(String c) {
+        this.cost = c;
+    }
+    public void setDuration(String d) {
+        this.duration = d;
+    }
+    public void setBookStatus(String b) {
+        this.bookStatus = b;
+    }
+    
+    // Implemented toString method to combine all variables of the flight for user readability.
+    public String toString() {
+        return getName() + " " + getDepartCity() + " " + getArrivalCity() + " " + getDepartDate() + " " + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration() + " " + getBookStatus();
+    }
 }

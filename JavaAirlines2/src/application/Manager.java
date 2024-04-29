@@ -11,7 +11,7 @@ import java.io.Writer;
 
 public class Manager {
     
-	// classifying attributes
+	// Declaring Variables
 	
     private String username;
     private String password;
