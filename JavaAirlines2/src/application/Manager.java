@@ -116,24 +116,5 @@ public class Manager {
         flight.setBookStatus("Terminated");
     }
     
-    //Main method
-    public static void main(String[] Args) throws IOException {
-    	UserInfoParser parser = new UserInfoParser();
-    	List<UserInfo> userInfoList = parser.readUserDataFromTXT("src//application//UserInfo.txt");
-    	try {
-			System.out.println(userInfoList);
-    	} catch (IndexOutOfBoundsException e) {
-    		System.err.println("Requested index is out of bounds: " + e.getMessage());
-    	}
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-    	try {
-			System.out.println(flights);
-    	} catch (IndexOutOfBoundsException e) {
-    		System.err.println("Requested index is out of bounds: " + e.getMessage());
-    	}
-    	
-    }
-    
 }
 

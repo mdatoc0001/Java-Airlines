@@ -20,6 +20,53 @@ public class Flight {
     private String cost;
     private String duration;
     private String bookStatus;
+    
+    // Constructor method for String of Flight Details
+    public Flight (String[] flightDetails) {
+    	
+    	if (flightDetails.length == 15) {
+    		
+    	
+        this.name = flightDetails[0];
+        this.departAirport = flightDetails[1];
+        this.arrivalAirport = flightDetails[2];
+        this.departDate = flightDetails[3];
+        this.arrivalDate = flightDetails[4];
+        this.departTime = flightDetails[5];
+        this.arrivalTime = flightDetails[6];
+        this.terminal = flightDetails[7];
+        this.gate = flightDetails[8];
+        this.totalSeats = flightDetails[9];
+        this.takenSeats = flightDetails[10];
+        this.availableSeats = flightDetails[11];
+        this.cost = flightDetails[12];
+        this.duration = flightDetails[13];
+        this.bookStatus = flightDetails[14];
+        
+    	} else {
+            throw new IllegalArgumentException("Invalid flight data");
+        }
+    }
+    public void setFlight (Flight flightDetails) {
+    	
+        this.name = flightDetails.getName();
+        this.departAirport = flightDetails.getDepartAirport();
+        this.arrivalAirport = flightDetails.getArrivalAirport();
+        this.departDate = flightDetails.getDepartDate();
+        this.arrivalDate = flightDetails.getArrivalDate();
+        this.departTime = flightDetails.getDepartTime();
+        this.arrivalTime = flightDetails.getArrivalTime();
+        this.terminal = flightDetails.getTerminal();
+        this.gate = flightDetails.getGate();
+        this.totalSeats = flightDetails.getTotalSeats();
+        this.takenSeats = flightDetails.getTakenSeats();
+        this.availableSeats = flightDetails.getAvailableSeats();
+        this.cost = flightDetails.getCost();
+        this.duration = flightDetails.getDuration();
+        this.bookStatus = flightDetails.getBookStatus();
+      
+    }
+    
     // Constructor method
     public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
         this.name = n;
