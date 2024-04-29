@@ -21,9 +21,9 @@
 			<location>/Users/madeline/classes/comp380/team_project_workspace/Java-Airlines/JavaAirlines2/src/application/JFKAirportController.java</location>
 		</link>
 		<link>
-			<name>src/application/LAXAirportController.java</name>
+			<name>src/application/ManagerViewReserved.fxml</name>
 			<type>1</type>
-			<location>/Users/madeline/classes/comp380/team_project_workspace/Java-Airlines/JavaAirlines2/src/application/FlightDetailsController.java</location>
+			<location>/Users/madeline/classes/comp380/team_project_workspace/Java-Airlines/JavaAirlines2/src/application/ManagerViewReserved.fxml</location>
 		</link>
 	</linkedResources>
 </projectDescription>

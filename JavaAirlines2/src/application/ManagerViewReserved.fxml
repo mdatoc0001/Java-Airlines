@@ -19,8 +19,8 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="336.0" layoutY="77.0" mnemonicParsing="false" onAction="#view" text="View" />
-      <ComboBox fx:id="comboBox" layoutX="190.0" layoutY="77.0" prefHeight="26.0" prefWidth="127.0" promptText="Choose Flight" />
+      <ComboBox fx:id="comboBox" layoutX="187.0" layoutY="75.0" prefHeight="26.0" prefWidth="127.0" promptText="Choose Flight" />
       <Label fx:id="flightDataText2" alignment="TOP_LEFT" layoutX="300.0" layoutY="119.0" prefHeight="247.0" prefWidth="227.0" />
+      <Button layoutX="337.0" layoutY="75.0" mnemonicParsing="false" onAction="#view" prefHeight="26.0" text="View" />
    </children>
 </AnchorPane>
