@@ -185,6 +185,6 @@ public class Flight {
     
     // Implemented toString method to combine all variables of the flight for user readability.
     public String toString() {
-        return getName() + " " + getDepartCity() + " " + getArrivalCity() + " " + getDepartDate() + " " + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration() + " " + getBookStatus();
+        return getName() + "," + getDepartCity() + "," + getArrivalCity() + "," + getDepartDate() + "," + getArrivalDate() + "," + getDepartTime() + "," + getArrivalTime() + "," + getTerminal() + "," + getGate() + "," + getTotalSeats() + "," + getTakenSeats() + "," + getAvailableSeats() + "," + getCost() + "," + getDuration() + "," + getBookStatus();
     }
 }
