@@ -101,5 +101,16 @@ public class JFKAirportController implements Initializable {
     				"Booking Status: " + flight.getBookStatus());
     	}
     }
+    
+    @FXML
+    void reserve(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("PaymentScreen.fxml"));
+		root = loader.load();
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
 
 }

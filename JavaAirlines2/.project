@@ -25,5 +25,15 @@
 			<type>1</type>
 			<location>/Users/madeline/classes/comp380/team_project_workspace/Java-Airlines/JavaAirlines2/src/application/ManagerViewReserved.fxml</location>
 		</link>
+		<link>
+			<name>src/application/PaymentScreen.fxml</name>
+			<type>1</type>
+			<location>/Users/madeline/classes/comp380/team_project_workspace/Java-Airlines/JavaAirlines2/src/application/PaymentScreen.fxml</location>
+		</link>
+		<link>
+			<name>src/application/PaymentScreenController.java</name>
+			<type>1</type>
+			<location>/Users/madeline/classes/comp380/team_project_workspace/Java-Airlines/JavaAirlines2/src/application/PaymentScreenController.java</location>
+		</link>
 	</linkedResources>
 </projectDescription>
