@@ -1,0 +1,8 @@
+Flight 287,New York,Oregon,03-01-2024,03-01-2024,3:53 PST,9:53 CST,B,2,250,249,1,$294.97,6 hours,Available
+Flight 678,Los Angeles,San Francisco,04-05-2024,04-05-2024,3:53 PST,5:53 PST,C,9,175,174,1,$75.85,2 hours,Available
+Flight 467,Los Angeles,Hawaii,04-07-2024,04-07-2024,11:30 PST,16:30 PST,B,3,150,149,1,$453.10,5 hours,Available
+Flight 321,New York,Chicago,07-25-2024,07-25-2024,3:53 PST,17:53 PST,A,4,250,249,1,$145.26,4 hours,Available
+Flight 452,Los Angeles,New York,08-12-2024,08-12-2024,1:35 PST,7:35 PST,D,6,150,149,1,$112.97,6 hours,Available
+Flight 874,New York,Dallas,05-21-2024,05-21-2024,10:25 PST,16:25 PST,C,12,175,174,1,$112.97,6 hours,Available
+Flight 938,Los Angeles,Nevada,11-17-2024,11-17-2024,3:53 PST,9:53 PST,A,1,125,124,1,$112.97,6 hours,Available
+Flight 234,New York,San Jose,09-01-2024,09-01-2024,12:35 PST,13:35 PST,B,2,100,99,1,$112.97,1 hours,Available
