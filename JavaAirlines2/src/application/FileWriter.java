@@ -6,14 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileWriter { 
-    public static void main(String[] args) { 
-        // Sample ArrayList of Strings 
-    	
-        ArrayList<String> strlst = new ArrayList<>(); 
-        strlst.add("Welcome to"); 
-        strlst.add("Greeks for Greeks"); 
-        strlst.add("Java"); 
-        strlst.add("tutorial"); 
+    public static void main(String[] args) {  
         
         FlightParser parser = new FlightParser();
     	List<Flight> flights = null;
