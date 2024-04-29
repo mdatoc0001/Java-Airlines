@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,33 +26,54 @@ public class ManagerEditController implements Initializable {
 	private Parent root;
 	
 	Manager manager = new Manager();
+	List<String> listOfNames;
 	
 	@FXML
     private ComboBox<String> comboBox;
+	
+	@FXML
+    private ComboBox<String> comboBoxFlights;
 	
     @FXML
     private TextField dataText;
 
     @FXML
-    private Label flightDetailsText;
-    
-    @FXML 
-    private Label flightDetailsText2;
+    private Label textBox1;
 
     @FXML
-    private TextField flightName;
+    private Label textBox2;
     
     @FXML
     private Label confirmationText;
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+    	
+    	// Data type Combo Box
     	comboBox.setItems(FXCollections.observableArrayList("Flight Name","Departing City","Arrival City","Departing Date","Arrival Date","Departing Time","Arrival Time","Terminal","Gate","Total Seats","Taken Seats","Available Seats","Cost","Duration","Book Status"));
+    	
+    	// Flight Names Combo Box
+    	FlightParser parser2 = new FlightParser();
+    	List<Flight> flights = null;
+		try {
+			flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(flights);
+		
+    	listOfNames = manager.getAllFlights(flights);
+    	System.out.println(listOfNames);
+    	ObservableList<String> list = FXCollections.observableArrayList(listOfNames);
+    	System.out.println(list);
+    	comboBoxFlights.setItems(list);
     }
 
     @FXML
     public void getComboBoxInfo(ActionEvent event) {
     	System.out.println(comboBox.getValue());
+    	System.out.println(comboBoxFlights.getValue());
     }
     
     @FXML
@@ -66,14 +88,13 @@ public class ManagerEditController implements Initializable {
     }
 
     @FXML
-    public void Enter(ActionEvent event) throws IOException {
-    	
-    	String name = flightName.getText();
+    public void chooseFlight(ActionEvent event) throws IOException {
+    	String name = comboBoxFlights.getValue();
     	FlightParser parser2 = new FlightParser();
     	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
     	Flight flight = manager.getFlight(flights, name);
     	
-    	flightDetailsText.setText(
+    	textBox1.setText(
     			"Flight Number: " + flight.getName() + "\n" +
     			"Departing City: " + flight.getDepartCity() + "\n" +
     			"Arrival City: " + flight.getArrivalCity() + "\n" +
@@ -81,7 +102,7 @@ public class ManagerEditController implements Initializable {
     			"Arrival Date: " + flight.getArrivalDate() + "\n" +
     			"Departing Time: " + flight.getDepartTime() + "\n" +
     			"Arrival Time: " + flight.getArrivalTime());
-    	flightDetailsText2.setText(
+    	textBox2.setText(
     			"Terminal: " + flight.getTerminal() + "\n" + 
     			"Gate: " + flight.getGate() + "\n" +
 				"Total Seats: " + flight.getTotalSeats() + "\n" +
@@ -94,7 +115,7 @@ public class ManagerEditController implements Initializable {
 
     @FXML
     public void Submit(ActionEvent event) throws IOException {
-    	String name = flightName.getText();
+    	String name = comboBoxFlights.getValue();
     	String dataType = comboBox.getValue();
     	String newData = dataText.getText();
     	FlightParser parser2 = new FlightParser();
@@ -103,6 +124,24 @@ public class ManagerEditController implements Initializable {
     	manager.changeFlightInfo(flight, dataType, newData);
     	confirmationText.setText("Data Change Successful!");
     	System.out.print(flight);
+    	
+    	textBox1.setText(
+    			"Flight Number: " + flight.getName() + "\n" +
+    			"Departing City: " + flight.getDepartCity() + "\n" +
+    			"Arrival City: " + flight.getArrivalCity() + "\n" +
+    			"Departing Date: " + flight.getDepartDate() + "\n" +
+    			"Arrival Date: " + flight.getArrivalDate() + "\n" +
+    			"Departing Time: " + flight.getDepartTime() + "\n" +
+    			"Arrival Time: " + flight.getArrivalTime());
+    	textBox2.setText(
+    			"Terminal: " + flight.getTerminal() + "\n" + 
+    			"Gate: " + flight.getGate() + "\n" +
+				"Total Seats: " + flight.getTotalSeats() + "\n" +
+				"Taken Seats: " + flight.getTakenSeats() + "\n" +
+				"Available Seats: " + flight.getAvailableSeats() + "\n" +
+				"Cost: " + flight.getCost() + "\n" +
+				"Duration: " + flight.getDuration() + "\n" +
+				"Booking Status: " + flight.getBookStatus());
     }
 
 }

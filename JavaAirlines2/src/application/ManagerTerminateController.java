@@ -83,27 +83,23 @@ public class ManagerTerminateController implements Initializable{
     	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
     	Flight flight = manager.getFlight(flights, name);
     	
-    	if (name == null) {
-    		textBox1.setText("No Flights Reserved");
-    	} else {
-    		textBox1.setText(
-        			"Flight Number: " + flight.getName() + "\n" +
-        			"Departing City: " + flight.getDepartCity() + "\n" +
-        			"Arrival City: " + flight.getArrivalCity() + "\n" +
-        			"Departing Date: " + flight.getDepartDate() + "\n" +
-        			"Arrival Date: " + flight.getArrivalDate() + "\n" +
-        			"Departing Time: " + flight.getDepartTime() + "\n" +
-        			"Arrival Time: " + flight.getArrivalTime());
-        	textBox2.setText(
-        			"Terminal: " + flight.getTerminal() + "\n" + 
-        			"Gate: " + flight.getGate() + "\n" +
-    				"Total Seats: " + flight.getTotalSeats() + "\n" +
-    				"Taken Seats: " + flight.getTakenSeats() + "\n" +
-    				"Available Seats: " + flight.getAvailableSeats() + "\n" +
-    				"Cost: " + flight.getCost() + "\n" +
-    				"Duration: " + flight.getDuration() + "\n" +
-    				"Booking Status: " + flight.getBookStatus());
-    	}
+    	textBox1.setText(
+    			"Flight Number: " + flight.getName() + "\n" +
+    			"Departing City: " + flight.getDepartCity() + "\n" +
+    			"Arrival City: " + flight.getArrivalCity() + "\n" +
+    			"Departing Date: " + flight.getDepartDate() + "\n" +
+    			"Arrival Date: " + flight.getArrivalDate() + "\n" +
+    			"Departing Time: " + flight.getDepartTime() + "\n" +
+    			"Arrival Time: " + flight.getArrivalTime());
+    	textBox2.setText(
+    			"Terminal: " + flight.getTerminal() + "\n" + 
+    			"Gate: " + flight.getGate() + "\n" +
+				"Total Seats: " + flight.getTotalSeats() + "\n" +
+				"Taken Seats: " + flight.getTakenSeats() + "\n" +
+				"Available Seats: " + flight.getAvailableSeats() + "\n" +
+				"Cost: " + flight.getCost() + "\n" +
+				"Duration: " + flight.getDuration() + "\n" +
+				"Booking Status: " + flight.getBookStatus());
     }
     
     @FXML

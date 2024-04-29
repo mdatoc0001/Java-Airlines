@@ -81,7 +81,7 @@ public class ManagerViewAllController implements Initializable {
     	Flight flight = manager.getFlight(flights, name);
     	
     	if (name == null) {
-    		flightDataText.setText("No Flights Reserved");
+    		flightDataText.setText("No Flight Chosen");
     	} else {
     		flightDataText.setText(
         			"Flight Number: " + flight.getName() + "\n" +
