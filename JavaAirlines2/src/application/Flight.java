@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class Flight {
     // declaring variables
     private String name;
-    private String departAirport;
-    private String arrivalAirport;
+    private String departCity;
+    private String arrivalCity;
     private String departDate;
     private String arrivalDate;
     private String departTime;
@@ -28,8 +28,8 @@ public class Flight {
     		
     	
         this.name = flightDetails[0];
-        this.departAirport = flightDetails[1];
-        this.arrivalAirport = flightDetails[2];
+        this.departCity = flightDetails[1];
+        this.arrivalCity = flightDetails[2];
         this.departDate = flightDetails[3];
         this.arrivalDate = flightDetails[4];
         this.departTime = flightDetails[5];
@@ -50,8 +50,8 @@ public class Flight {
     public void setFlight (Flight flightDetails) {
     	
         this.name = flightDetails.getName();
-        this.departAirport = flightDetails.getDepartAirport();
-        this.arrivalAirport = flightDetails.getArrivalAirport();
+        this.departCity = flightDetails.getDepartCity();
+        this.arrivalCity = flightDetails.getArrivalCity();
         this.departDate = flightDetails.getDepartDate();
         this.arrivalDate = flightDetails.getArrivalDate();
         this.departTime = flightDetails.getDepartTime();
@@ -70,8 +70,8 @@ public class Flight {
     // Constructor method
     public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
         this.name = n;
-        this.departAirport = da;
-        this.arrivalAirport = aa;
+        this.departCity = da;
+        this.arrivalCity = aa;
         this.departDate = dd;
         this.arrivalDate = ad;
         this.departTime = dt;
@@ -90,11 +90,11 @@ public class Flight {
     public String getName() {
          return this.name;
     }
-    public String getDepartAirport() {
-         return this.departAirport;
+    public String getDepartCity() {
+         return this.departCity;
     }
-    public String getArrivalAirport() {
-         return this.arrivalAirport;
+    public String getArrivalCity() {
+         return this.arrivalCity;
     }
     public String getDepartDate() {
         return this.departDate;
@@ -138,11 +138,11 @@ public class Flight {
     public void setName(String n) {
         this.name = n;
    }
-   public void setDepartAirport(String da) {
-        this.departAirport = da;
+   public void setDepartCity(String da) {
+        this.departCity = da;
    }
-   public void setArrivalAirport(String aa) {
-        this.arrivalAirport = aa;
+   public void setArrivalCity(String aa) {
+        this.arrivalCity = aa;
    }
    public void setDepartDate(String dd) {
        this.departDate = dd;
@@ -183,6 +183,6 @@ public class Flight {
    }
    // Implemented toString method to combine all variables of the flight for user readability.
    public String toString() {
-       return getName() + " " + getDepartAirport() + " " + getArrivalAirport() + " " + getDepartDate() + " " + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration() + " " + getBookStatus();
+       return getName() + " " + getDepartCity() + " " + getArrivalCity() + " " + getDepartDate() + " " + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration() + " " + getBookStatus();
    }
 }

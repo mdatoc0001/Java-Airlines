@@ -85,8 +85,8 @@ public class ManagerViewOpenController implements Initializable {
     	} else {
     		flightDataText.setText(
         			"Flight Number: " + flight.getName() + "\n" +
-        			"Departing City: " + flight.getDepartAirport() + "\n" +
-        			"Arrival City: " + flight.getArrivalAirport() + "\n" +
+        			"Departing City: " + flight.getDepartCity() + "\n" +
+        			"Arrival City: " + flight.getArrivalCity() + "\n" +
         			"Departing Date: " + flight.getDepartDate() + "\n" +
         			"Arrival Date: " + flight.getArrivalDate() + "\n" +
         			"Departing Time: " + flight.getDepartTime() + "\n" +

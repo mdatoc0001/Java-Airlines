@@ -9,10 +9,16 @@
    <children>
       <Label alignment="CENTER" layoutX="205.0" layoutY="31.0" prefHeight="73.0" prefWidth="191.0" text="Select Airport:">
          <font>
-            <Font size="18.0" />
+            <Font size="30.0" />
          </font></Label>
       <Button layoutX="22.0" layoutY="18.0" mnemonicParsing="false" onAction="#Back2" text="Back" />
-      <Button layoutX="192.0" layoutY="188.0" mnemonicParsing="false" onAction="#LAX" text="LAX" />
-      <Button layoutX="366.0" layoutY="188.0" mnemonicParsing="false" onAction="#JFK" text="JFK" />
+      <Button layoutX="142.0" layoutY="160.0" mnemonicParsing="false" onAction="#LAX" prefHeight="83.0" prefWidth="127.0" text="LAX">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+      <Button layoutX="333.0" layoutY="160.0" mnemonicParsing="false" onAction="#JFK" prefHeight="83.0" prefWidth="127.0" text="JFK">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
    </children>
 </AnchorPane>

@@ -81,9 +81,9 @@ public class Manager {
     	if (attribute.equals("Flight Name") ) {
     		flight.setName(data);
     	} else if (attribute.equals("Departing City")) {
-    		flight.setDepartAirport(data);
+    		flight.setDepartCity(data);
     	} else if (attribute.equals("Arrival City")) {
-    		flight.setArrivalAirport(data);
+    		flight.setArrivalCity(data);
     	} else if (attribute.equals("Departing Date")) {
     		flight.setDepartDate(data);
     	} else if (attribute.equals("Arrival Date")) {

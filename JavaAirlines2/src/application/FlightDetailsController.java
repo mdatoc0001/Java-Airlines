@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -19,24 +18,24 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class ManagerViewReservedController implements Initializable {
+public class LAXAirportController implements Initializable {
 
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
 	
-	Manager manager = new Manager();
+	Airport lax = new Airport("LAX");
 	List<String> listOfNames;
 	
     @FXML
-    private Label flightDataText;
-    
-    @FXML 
-    private Label flightDataText2;
-    
+    private ComboBox<String> comboBoxLAX;
+
     @FXML
-    private ComboBox<String> comboBox;
-    
+    private Label textBox1;
+
+    @FXML
+    private Label textBox2;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     	FlightParser parser2 = new FlightParser();
@@ -49,22 +48,22 @@ public class ManagerViewReservedController implements Initializable {
 		}
 		System.out.println(flights);
 		
-    	listOfNames = manager.getReservedFlights(flights);
-    	System.out.println(listOfNames);
-    	ObservableList<String> list = FXCollections.observableArrayList(listOfNames);
-    	System.out.println(list);
-    	comboBox.setItems(list);
+		//LAX ComboBox Flights
+    	listOfNames = lax.getLAXFlights(flights);
+    	ObservableList<String> list1 = FXCollections.observableArrayList(listOfNames);
+    	System.out.println(list1);
+    	comboBoxLAX.setItems(list1);
     	
     }
     
     @FXML
     public void getComboBoxInfo(ActionEvent event) {
-    	System.out.println(comboBox.getValue());
+    	System.out.println(comboBoxLAX.getValue());
     }
-
+    
     @FXML
     public void Back(ActionEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerScene.fxml"));
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("AirportSelection.fxml"));
 		root = loader.load();
 		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -74,16 +73,16 @@ public class ManagerViewReservedController implements Initializable {
     }
 
     @FXML
-    public void view(ActionEvent event) throws IOException {
-    	String name = comboBox.getValue();
+    public void flightChosenLAX(ActionEvent event) throws IOException {
+    	String name = comboBoxLAX.getValue();
     	FlightParser parser2 = new FlightParser();
     	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-    	Flight flight = manager.getFlight(flights, name);
+    	Flight flight = lax.getFlight(flights, name);
     	
     	if (name == null) {
-    		flightDataText.setText("No Flights Reserved");
+    		textBox1.setText("No Flights Reserved");
     	} else {
-    		flightDataText.setText(
+    		textBox1.setText(
         			"Flight Number: " + flight.getName() + "\n" +
         			"Departing City: " + flight.getDepartCity() + "\n" +
         			"Arrival City: " + flight.getArrivalCity() + "\n" +
@@ -91,7 +90,7 @@ public class ManagerViewReservedController implements Initializable {
         			"Arrival Date: " + flight.getArrivalDate() + "\n" +
         			"Departing Time: " + flight.getDepartTime() + "\n" +
         			"Arrival Time: " + flight.getArrivalTime());
-        	flightDataText2.setText(
+        	textBox2.setText(
         			"Terminal: " + flight.getTerminal() + "\n" + 
         			"Gate: " + flight.getGate() + "\n" +
     				"Total Seats: " + flight.getTotalSeats() + "\n" +
@@ -101,7 +100,6 @@ public class ManagerViewReservedController implements Initializable {
     				"Duration: " + flight.getDuration() + "\n" +
     				"Booking Status: " + flight.getBookStatus());
     	}
-    	
     }
 
 }
