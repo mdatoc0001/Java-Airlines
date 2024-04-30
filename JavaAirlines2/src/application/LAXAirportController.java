@@ -25,6 +25,7 @@ public class LAXAirportController implements Initializable {
 	private Parent root;
 
 	Airport lax = new Airport("LAX");
+	Flight flightChosen = Flight.getInstance();
 	List<String> listOfNames;
 
     @FXML
@@ -79,31 +80,34 @@ public class LAXAirportController implements Initializable {
     	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
     	Flight flight = lax.getFlight(flights, name);
 
-    	if (name == null) {
-    		textBox1.setText("No Flights Reserved");
-    	} else {
-    		textBox1.setText(
-        			"Flight Number: " + flight.getName() + "\n" +
-        			"Departing City: " + flight.getDepartCity() + "\n" +
-        			"Arrival City: " + flight.getArrivalCity() + "\n" +
-        			"Departing Date: " + flight.getDepartDate() + "\n" +
-        			"Arrival Date: " + flight.getArrivalDate() + "\n" +
-        			"Departing Time: " + flight.getDepartTime() + "\n" +
-        			"Arrival Time: " + flight.getArrivalTime());
-        	textBox2.setText(
-        			"Terminal: " + flight.getTerminal() + "\n" + 
-        			"Gate: " + flight.getGate() + "\n" +
-    				"Total Seats: " + flight.getTotalSeats() + "\n" +
-    				"Taken Seats: " + flight.getTakenSeats() + "\n" +
-    				"Available Seats: " + flight.getAvailableSeats() + "\n" +
-    				"Cost: " + flight.getCost() + "\n" +
-    				"Duration: " + flight.getDuration() + "\n" +
-    				"Booking Status: " + flight.getBookStatus());
-    	}
+    	textBox1.setText(
+    			"Flight Number: " + flight.getName() + "\n" +
+    			"Departing City: " + flight.getDepartCity() + "\n" +
+    			"Arrival City: " + flight.getArrivalCity() + "\n" +
+    			"Departing Date: " + flight.getDepartDate() + "\n" +
+    			"Arrival Date: " + flight.getArrivalDate() + "\n" +
+    			"Departing Time: " + flight.getDepartTime() + "\n" +
+    			"Arrival Time: " + flight.getArrivalTime());
+    	textBox2.setText(
+    			"Terminal: " + flight.getTerminal() + "\n" + 
+    			"Gate: " + flight.getGate() + "\n" +
+				"Total Seats: " + flight.getTotalSeats() + "\n" +
+				"Taken Seats: " + flight.getTakenSeats() + "\n" +
+				"Available Seats: " + flight.getAvailableSeats() + "\n" +
+				"Cost: " + flight.getCost() + "\n" +
+				"Duration: " + flight.getDuration() + "\n" +
+				"Booking Status: " + flight.getBookStatus());
+    	
+    	flightChosen.setFlight(flight.getName(),flight.getDepartCity(),flight.getArrivalCity(),
+    			flight.getDepartDate(),flight.getArrivalDate(),flight.getDepartTime(),
+    			flight.getArrivalTime(),flight.getTerminal(),flight.getGate(),
+    			flight.getTotalSeats(),flight.getTakenSeats(),flight.getAvailableSeats(),
+    			flight.getCost(),flight.getDuration(),flight.getBookStatus());
     }
     
     @FXML
     void reserve(ActionEvent event) throws IOException {
+    	
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("PaymentScreen.fxml"));
 		root = loader.load();
 		

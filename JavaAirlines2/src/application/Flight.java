@@ -4,6 +4,16 @@ package application;
 import java.util.Arrays;
 // Flight Class
 public class Flight {
+	
+	private static final Flight instance = new Flight();
+
+	private Flight(){}
+
+	public static Flight getInstance() {
+
+		return instance;
+	}
+	
     // declaring variables
     private String name;
     private String departCity;
@@ -22,7 +32,7 @@ public class Flight {
     private String bookStatus;
     
     // Constructor method using manual string parameters
-    public Flight (String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
+    public void setFlight(String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
         this.name = n;
         this.departCity = da;
         this.arrivalCity = aa;

@@ -4,24 +4,34 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Payment {
+	
+	private static final Payment instance = new Payment();
+
+	private Payment(){}
+
+	public static Payment getInstance() {
+
+		return instance;
+	}
+	
    private String cardType;
    private String name;
    private String validityDate;
    private String cost;
    private boolean paymentStatus;
-   protected int cardNo;
-   protected int cvv;
-   protected int paymentID;
+   protected String cardNo;
+   protected String cvv;
+   protected String paymentID;
    
-   public Payment(String cardType, String name, String validityDate, String cost, boolean paymentStatus, int cardNo, int cvv, int paymentID) {
+   public void setPaymentInfo(String cardType, String name, String validityDate, String cost, String cardNo, String cvv) {
       this.cardType = cardType;
       this.name = name;
       this.validityDate = validityDate; 
       this.cost = cost;
-      this.paymentStatus = paymentStatus;
+      this.paymentStatus = false;
       this.cardNo = cardNo;
       this.cvv = cvv;
-      this.paymentID = paymentID;
+      this.paymentID = generateID();
    }
    
    //Getters
@@ -45,15 +55,15 @@ public class Payment {
       return this.paymentStatus;
    }
    
-   public int getCardNo() {
+   public String getCardNo() {
       return this.cardNo;
    }
    
-   public int getCvv() {
+   public String getCvv() {
       return this.cvv;
    }
    
-   public int getPaymentID() {
+   public String getPaymentID() {
       return this.paymentID;
    }
      
@@ -78,15 +88,15 @@ public class Payment {
       this.paymentStatus = paymentStatus;
    }
    
-   public void setCardNo(int cardNo) {
+   public void setCardNo(String cardNo) {
       this.cardNo = cardNo;
    }
    
-   public void setCvv(int cvv) {
+   public void setCvv(String cvv) {
       this.cvv = cvv;
    }
    
-   public void setPaymentID(int paymentID) {
+   public void setPaymentID(String paymentID) {
       this.paymentID = paymentID;
    }
    
@@ -152,18 +162,16 @@ public class Payment {
       name = scanner.nextLine();
                   
       System.out.println("Card No: "); 
-      cardNo = scanner.nextInt();
+      cardNo = scanner.nextLine();
       scanner.nextLine();
       
       System.out.println("CVV: "); 
-      cvv = scanner.nextInt();
+      cvv = scanner.nextLine();
       scanner.nextLine();
-      int length = cvvLength(cvv);
-      while (length != 3) { //cvv must be three digits, if not give an invalid message
+      while (cvvLength() == false) { //cvv must be three digits, if not give an invalid message
          System.out.println("Invalid CVV! Try again.");
-         cvv = scanner.nextInt();
+         cvv = scanner.nextLine();
          scanner.nextLine();
-         length = cvvLength(cvv);
       }
       
       System.out.println("Valid Thru: ");
@@ -189,21 +197,43 @@ public class Payment {
       }
    }
 
-   //Generates random transaction ID for each successful transcation
-   public void generateID() {
-     paymentID = (int)(Math.random() * 5000000 +2000);
+   //Generates random transaction ID for each successful transaction
+   public String generateID() {
+	   int temp = (int)(Math.random() * 5000000 +2000);
+	   paymentID = Integer.toString(temp);
+	   return paymentID;
+   }
+   
+   //Checks the length of card no. for validation
+   public boolean validityDateLength() {
+	   if (validityDate.length() == 4) {
+		   return true;
+	   } else {
+		   return false;
+	   }
+   }
+   
+   //Checks the length of card no. for validation
+   public boolean cardNoLength() {
+	   if (cardNo.length() == 15) {
+		   return true;
+	   } else {
+		   return false;
+	   }
    }
    
    //Checks the length of cvv no. for validation
-   public int cvvLength(int cvv) {
-      int temp = cvv;
-      int length = 0;
-      while(temp > 0)
-      {
-         length++;
-         temp = temp / 10;
-      }
-      return length;
+   public boolean cvvLength() {
+	   if (cvv.length() == 2) {
+		   return true;
+	   } else {
+		   return false;
+	   }
+   }
+   
+   // ToString Method
+   public String toString() {
+	   return getCardType() + "," + getName() + "," + getValidityDate() + "," + getCost() + "," + getCardNo() + "," + getCvv();
    }
    
 }

@@ -33,6 +33,10 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="confirmationNo" layoutX="300.0" layoutY="109.0" prefHeight="27.0" prefWidth="143.0" />
+      <Label fx:id="confirmationNo" layoutX="300.0" layoutY="109.0" prefHeight="27.0" prefWidth="143.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

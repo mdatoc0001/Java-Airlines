@@ -1,24 +1,37 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class ConfirmationSceneController {
+public class ConfirmationSceneController implements Initializable {
 
+	Payment payment = Payment.getInstance();
+	
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
 	
     @FXML
     private Label confirmationNo;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+    	
+    	confirmationNo.setText(payment.getPaymentID());
+    	
+    }
 
     @FXML
     public void Logout(ActionEvent event) throws IOException {
