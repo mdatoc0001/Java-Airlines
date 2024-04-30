@@ -24,7 +24,7 @@ public class LAXAirportController implements Initializable {
 	private Scene scene;
 	private Parent root;
 
-	Airport lax = new Airport("LAX");
+	Airport lax = Airport.getInstance();
 	Flight flightChosen = Flight.getInstance();
 	List<String> listOfNames;
 
@@ -54,6 +54,8 @@ public class LAXAirportController implements Initializable {
     	ObservableList<String> list1 = FXCollections.observableArrayList(listOfNames);
     	System.out.println(list1);
     	comboBoxLAX.setItems(list1);
+    	
+    	lax.setName("LAX");
 
     }
 

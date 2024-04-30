@@ -5,6 +5,15 @@ import java.util.List;
 
 public class Airport {
 	
+	private static final Airport instance = new Airport();
+
+	private Airport(){}
+
+	public static Airport getInstance() {
+
+		return instance;
+	}
+	
 	//Declaring variables
     private String name; 
     private Flight flight;

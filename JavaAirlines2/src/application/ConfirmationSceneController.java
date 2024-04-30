@@ -17,7 +17,11 @@ import javafx.stage.Stage;
 
 public class ConfirmationSceneController implements Initializable {
 
+	UserInfo user = UserInfo.getInstance();
+	Airport airport = Airport.getInstance();
+	Flight flight = Flight.getInstance();
 	Payment payment = Payment.getInstance();
+	Reservation reservation;
 	
 	private Stage stage;
 	private Scene scene;
@@ -29,17 +33,14 @@ public class ConfirmationSceneController implements Initializable {
     @FXML
     private Label textBox1;
     
-    @FXML
-    private Label textBox2;
-    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     	
     	confirmationNo.setText(payment.getPaymentID());
     	
-    	textBox1.setText(null);
-    	
-    	textBox2.setText(null);
+    	reservation = new Reservation(user, flight, airport);
+    	reservation.confirmReservation();
+    	textBox1.setText(reservation.toString());
     	
     }
 

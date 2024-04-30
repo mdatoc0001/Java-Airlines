@@ -35,18 +35,16 @@ public class Reservation {
         this.user = user;
     }
     public void setFlight(Flight flight) {
-        if(flight.getBookStatus() == false) {
+        if(flight.getBookStatus().equals("Available")) {
            this.flight = flight;
         }
         else {
            System.out.println("Error, flight is already booked.");
         }
     }
-
     public void setAirport(Airport airport) {
         this.airport = airport;
     }
-
     public void setConfirmed(boolean confirmed) {
         isConfirmed = confirmed;
     }
@@ -54,26 +52,26 @@ public class Reservation {
     // Method to confirm the reservation
     public void confirmReservation() {
         isConfirmed = true;
-        flight.setBookStatus(true); // Mark the flight as booked
+        flight.setBookStatus("Booked"); // Mark the flight as booked
     }
 
     // Method to cancel the reservation
     public void cancelReservation() {
         isConfirmed = false;
-        flight.setBookStatus(false); // Mark the flight as not booked
+        flight.setBookStatus("Available"); // Mark the flight as not booked
     }
 
     // Override toString() method to provide a meaningful string representation of the reservation
     @Override
     public String toString() {
-        return "Reservation:" +
-               "\n flight: " + flight.getName() +
-               "\n airport: " + airport.getName() +
-               "\n destination: " + flight.getArrivalAirport() +
-               "\n terminal: " + flight.getTerminal() + 
-               "\n gate: " + flight.getGate() +
-               "\n date: " + flight.getDepartDate() + ", " + flight.getDepartTime() +
-               "\n isConfirmed: " + isConfirmed +
+        return "Reservation Details:" +
+               "\n Flight: " + flight.getName() +
+               "\n Airport: " + airport.getName() +
+               "\n Destination: " + flight.getArrivalCity() +
+               "\n Terminal: " + flight.getTerminal() + 
+               "\n Gate: " + flight.getGate() +
+               "\n Date: " + flight.getDepartDate() + " - " + flight.getDepartTime() +
+               "\n Confirmed?: " + isConfirmed +
                "\n Customer Name: " + user.getName() +
                "\n Username: " + user.getUserName() +
                "\n Age: " + user.getAge() +
@@ -82,20 +80,14 @@ public class Reservation {
                "\n";
     }
     
-    //Test reservation
+    /*Test reservation
     public static void main(String[] Args) {
-        
-        /*
-        getName() + " " + getDepartAirport() + " " + getArrivalAirport() + " " + getDepartDate() + " " 
-       + getArrivalDate() + " " + getDepartTime() + " " + getArrivalTime() + " " + getTerminal() + " " + getGate() + " " 
-       + getTotalSeats() + " " + getTakenSeats() + " " + getAvailableSeats() + " " + getCost() + " " + getDuration() + " " + getBookStatus();
-        */
         
         // Create user
         UserInfo user = UserInfo.getInstance();
 
         // Set user information
-        user.setUserInfo("John Smith", "johnnySmith123", "30", "1234567890", "USA", "ABCD1234", "password");
+        user.setUserInfo("John Smith", "johnnySmith123", 30, "1234567890", "USA", "ABCD1234", "password");
         
         //Make an Airport
         Airport airport = new Airport("LAX");
@@ -196,5 +188,5 @@ public class Reservation {
          Reservation reservation10 = new Reservation(user10, flights2[4], airport2);
          reservation10.confirmReservation();
          System.out.println(reservation10.toString());
-    }
+    }*/
 }

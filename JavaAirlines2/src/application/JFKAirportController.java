@@ -24,7 +24,7 @@ public class JFKAirportController implements Initializable {
 	private Scene scene;
 	private Parent root;
 	
-	Airport jfk = new Airport("JFK");
+	Airport jfk = Airport.getInstance();
 	Flight flightChosen = Flight.getInstance();
 	List<String> listOfNames;
     
@@ -54,6 +54,8 @@ public class JFKAirportController implements Initializable {
     	ObservableList<String> list2 = FXCollections.observableArrayList(listOfNames);
     	System.out.println(list2);
     	comboBoxJFK.setItems(list2);
+    	
+    	jfk.setName("JFK");
     	
     }
     

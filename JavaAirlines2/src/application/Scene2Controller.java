@@ -25,16 +25,6 @@ public class Scene2Controller {
 	private Scene scene;
 	private Parent root;
    
-   //
-   private Flight selectedFlight;
-   
-   public void setSelectedFlight(Flight flight) {
-       this.selectedFlight = flight;
-   }
-   
-   private Flight[] flights1;
-   private Flight[] flights2;
-   
    UserInfo data = UserInfo.getInstance();
 	
 	
