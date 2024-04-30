@@ -39,6 +39,7 @@ public class Manager {
     
     //Gets list of names of all Flights
     public List<String> getAllFlights(List<Flight> flights) {
+    	allFlights.clear();
     	for (int i=0; i<flights.size(); i++) {
     		allFlights.add(flights.get(i).getName());
         }
@@ -47,6 +48,7 @@ public class Manager {
     
     //Gets list of names of Reserved Flights
     public List<String> getReservedFlights(List<Flight> flights) {
+    	reservedFlights.clear();
     	for (int i=0; i<flights.size(); i++) {
         	if (flights.get(i).getBookStatus().equals("Booked")) {
         		reservedFlights.add(flights.get(i).getName());
@@ -57,6 +59,7 @@ public class Manager {
     
     //Gets list of names of Open Flights
     public List<String> getOpenFlights(List<Flight> flights) {
+    	openFlights.clear();
     	for (int i=0; i<flights.size(); i++) {
         	if (flights.get(i).getBookStatus().equals("Available")) {
         		openFlights.add(flights.get(i).getName());

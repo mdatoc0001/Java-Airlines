@@ -27,6 +27,7 @@ public class Airport {
 
     // Creates and returns list of names of LAX Flights
     public List<String> getLAXFlights(List<Flight> flights) {
+    	laxFlights.clear();
     	for (int i=0; i<flights.size(); i++) {
         	if (flights.get(i).getDepartCity().equals("Los Angeles") && flights.get(i).getBookStatus().equals("Available")) {
         		laxFlights.add(flights.get(i).getName());
@@ -37,6 +38,7 @@ public class Airport {
     
     // Creates and returns list of names of JFK Flights
     public List<String> getJFKFlights(List<Flight> flights) {
+    	jfkFlights.clear();
     	for (int i=0; i<flights.size(); i++) {
         	if (flights.get(i).getDepartCity().equals("New York") && flights.get(i).getBookStatus().equals("Available")) {
         		jfkFlights.add(flights.get(i).getName());
