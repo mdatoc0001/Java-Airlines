@@ -26,10 +26,20 @@ public class ConfirmationSceneController implements Initializable {
     @FXML
     private Label confirmationNo;
     
+    @FXML
+    private Label textBox1;
+    
+    @FXML
+    private Label textBox2;
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     	
     	confirmationNo.setText(payment.getPaymentID());
+    	
+    	textBox1.setText(null);
+    	
+    	textBox2.setText(null);
     	
     }
 
