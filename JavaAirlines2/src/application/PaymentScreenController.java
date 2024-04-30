@@ -77,7 +77,6 @@ public class PaymentScreenController implements Initializable {
 
     @FXML
     public void Pay(ActionEvent event) throws IOException {
-<<<<<<< HEAD
     	
     	payment.setPaymentInfo(comboBox.getValue(), cardName.getText(), validityDate.getText(), 
     			cost.getText(), cardNo.getText(), cvv.getText());
@@ -100,21 +99,11 @@ public class PaymentScreenController implements Initializable {
     		
     		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     		scene = new Scene(root);
+    		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     		stage.setScene(scene);
     		stage.show(); 
     	}
     	
-    	
-=======
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("ConfirmationScene.fxml"));
-		root = loader.load();
-		
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-	    	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		stage.setScene(scene);
-		stage.show();
->>>>>>> 14f279ab9591b9eeec63fe6e16f6ea3e78b838cd
     }
 
 }
