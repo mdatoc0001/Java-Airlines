@@ -13,7 +13,6 @@
       <TextField fx:id="AgeTextField" layoutX="226.0" layoutY="161.0" />
       <TextField fx:id="phoneNumTextField" layoutX="226.0" layoutY="193.0" promptText="###-###-####" />
       <TextField fx:id="PassportTextField" layoutX="226.0" layoutY="256.0" promptText="E0000####" />
-      <TextField fx:id="CountryTextField" layoutX="226.0" layoutY="225.0" />
       <Label layoutX="190.0" layoutY="99.0" text="Name:" />
       <Label layoutX="201.0" layoutY="165.0" text="Age:" />
       <Label layoutX="198.0" layoutY="14.0" text="Profile Creation">
@@ -22,7 +21,7 @@
          </font>
       </Label>
       <Label layoutX="181.0" layoutY="197.0" text="Phone#: " />
-      <Label layoutX="130.0" layoutY="229.0" text="Country of Origin:" />
+      <Label layoutX="131.0" layoutY="229.0" text="Country of Origin: USA" />
       <Label layoutX="167.0" layoutY="260.0" text="Passport #:" />
       <TextField fx:id="UserNameTextField" layoutX="226.0" layoutY="128.0" promptText="Username" />
       <Label layoutX="168.0" layoutY="132.0" text="Username:" />
@@ -32,5 +31,11 @@
       <Label layoutX="167.0" layoutY="295.0" text="Password:" />
       <PasswordField fx:id="PasswordTextField" layoutX="226.0" layoutY="291.0" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+      <Label fx:id="errorName" layoutX="385.0" layoutY="91.0" prefHeight="33.0" prefWidth="186.0" />
+      <Label fx:id="errorUsername" layoutX="385.0" layoutY="124.0" prefHeight="33.0" prefWidth="205.0" text="5 to 20 Characters" />
+      <Label fx:id="errorAge" layoutX="385.0" layoutY="157.0" prefHeight="33.0" prefWidth="141.0" />
+      <Label fx:id="errorPhone" layoutX="385.0" layoutY="189.0" prefHeight="33.0" prefWidth="186.0" />
+      <Label fx:id="errorPassport" layoutX="385.0" layoutY="252.0" prefHeight="33.0" prefWidth="186.0" />
+      <Label fx:id="errorPassword" layoutX="385.0" layoutY="287.0" prefHeight="33.0" prefWidth="205.0" text="7 to 20 Characters" />
    </children>
 </AnchorPane>

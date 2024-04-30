@@ -68,6 +68,7 @@ public void Reservation(ActionEvent event) throws IOException {
 	
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
+	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	stage.setScene(scene);
 	stage.show();
 }
@@ -93,6 +94,7 @@ public void Back(ActionEvent event) throws IOException {
 	
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
+	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	stage.setScene(scene);
 	stage.show();
 }
@@ -107,6 +109,7 @@ public void LAX(ActionEvent event) throws IOException {
 	
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
+	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	stage.setScene(scene);
 	stage.show();
 }
@@ -120,6 +123,7 @@ public void JFK(ActionEvent event) throws IOException {
 	
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
+	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	stage.setScene(scene);
 	stage.show();
 }
@@ -133,6 +137,7 @@ public void Back2(ActionEvent event) throws IOException {
 	
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
+	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	stage.setScene(scene);
 	stage.show();
 }

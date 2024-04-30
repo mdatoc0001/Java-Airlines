@@ -2,23 +2,21 @@ package application;
 
 public class UserInfo {
 	
-	// Creates instance of UserInfo Object
+	
 	private static final UserInfo instance = new UserInfo();
 	
-	// Declaring Variables
-	private String Name, userName, Age, Phone, Country, Passport, Password;
+	private String Name, userName, Phone, Country, Passport, Password;
+	int Age = 0;
 	
-	//Constructor with no parameters
 	private UserInfo(){}
 	
-	// Get Method that return instance of UserInfo Object
 	public static UserInfo getInstance() {
 		
 		return instance;
 	}
 	
-	// Constructor with manual String parameters of User info details
-	public void setUserInfo(String one, String two, String three, String four, String five, String six, String seven) {
+
+	public void setUserInfo(String one, String two, int three, String four, String five, String six, String seven) {
 		
 		Name = one;
 		userName = two;
@@ -28,33 +26,43 @@ public class UserInfo {
 		Passport = six;
 		Password = seven;
 	}
-	
-	// Getters
 	public String getName() {
-		return Name;
-	}
+		
+	   return Name;
+	  }
 	public String getUserName() {
-		return userName;
-	}
-	public String getAge() {
-		return Age;
-	}
+		
+		   return userName;
+		  }
+	public int getAge() {
+		
+		   return Age;
+		  }
 	public String getPhone() {
-		return Phone;
-	}
+			
+			   return Phone;
+			  }
 	public String getCountry() {
-		return Country;
-	}
-	public String getPassport() {
-		return Passport;
-	}
-	public String getPassword() {
-		return Password;
-	}
+		
+		   return Country;
+		  }
+		public String getPassport() {
+			
+			   return Passport;
+			  }
+		public String getPassword() {
+			
+			   return Password;
+			  }
 	
-	// Sets UserName
 	public void setUserName(String a) {
-		userName = a;
+		
+		   userName = a;
+		  }
+	
+	public void displayName(String userName) {
+		
+		//nameLabel.setText("Welcome " + userName);
 	}
 
 }
