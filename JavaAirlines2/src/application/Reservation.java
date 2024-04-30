@@ -1,3 +1,5 @@
+package application;
+
 public class Reservation {
     private Flight flight;
     private Airport airport;
