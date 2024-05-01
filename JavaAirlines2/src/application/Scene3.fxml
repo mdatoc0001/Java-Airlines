@@ -37,5 +37,6 @@
       <Label fx:id="errorPhone" layoutX="385.0" layoutY="189.0" prefHeight="33.0" prefWidth="186.0" />
       <Label fx:id="errorPassport" layoutX="385.0" layoutY="252.0" prefHeight="33.0" prefWidth="186.0" />
       <Label fx:id="errorPassword" layoutX="385.0" layoutY="287.0" prefHeight="33.0" prefWidth="205.0" text="7 to 20 Characters" />
+      <Label fx:id="confirm" alignment="CENTER" layoutX="231.0" layoutY="76.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

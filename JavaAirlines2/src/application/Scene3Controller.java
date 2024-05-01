@@ -17,6 +17,8 @@ import java.util.regex.Matcher;
 
 public class Scene3Controller{
 	UserInfo data = UserInfo.getInstance();
+	
+	@FXML Label confirm;
 	@FXML
 	TextField nameTextField2;
 	@FXML
@@ -58,6 +60,7 @@ public class Scene3Controller{
 		String Country = "USA";
 		String Passport = PassportTextField.getText();
 		String Password = PasswordTextField.getText();
+		
 		
 		try {
             age = Integer.parseInt(Age);
@@ -109,6 +112,7 @@ public class Scene3Controller{
 			errorPassword.setText("Password not within 7 to 20\nCharacters");
 		}
 		
+		confirm.setText("Profile Created!");
 		data.setUserInfo(name, userName, age, phoneNum, Country, Passport, Password);
 
 
