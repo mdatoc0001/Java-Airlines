@@ -38,6 +38,8 @@ public class Scene3Controller{
 	@FXML
 	ChoiceBox<String> myChoiceBox;
 	
+	boolean nameCheck,userCheck,ageCheck,phoneCheck,passportCheck,passwordCheck = false;
+	
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
@@ -71,6 +73,7 @@ public class Scene3Controller{
             else {
             	
             	errorAge.setText("Age Checked");
+            	ageCheck = true;
             }
         } catch (NumberFormatException e) {
         	errorAge.setText("Not a number");
@@ -79,6 +82,7 @@ public class Scene3Controller{
 		if(CheckSpace(name)) {
 			
 			errorName.setText("Name checked");
+			nameCheck = true;
 		}
 		else {
 			errorName.setText("First and Last Name Required");
@@ -86,6 +90,7 @@ public class Scene3Controller{
 		if(userName.length() > 4 && userName.length() < 21) {
 			
 			errorUsername.setText("Username checked");
+			userCheck = true;
 		}
 		else {
 			errorUsername.setText("Username not within 5 to 20\nCharacters");
@@ -93,6 +98,7 @@ public class Scene3Controller{
 		if(isValidPhoneNumber(phoneNum)) {
 			
 			errorPhone.setText("Phone checked");
+			phoneCheck = true;
 		}
 		else {
 			errorPhone.setText("Re-Enter Phone Number");
@@ -100,6 +106,7 @@ public class Scene3Controller{
 		if(isMatchingPattern(Passport)) {
 			
 			errorPassport.setText("Passport checked");
+			passportCheck = true;
 		}
 		else {
 			errorPassport.setText("Re-Enter Passport");
@@ -107,14 +114,18 @@ public class Scene3Controller{
 		if(Password.length() > 6 && Password.length() < 21) {
 			
 			errorPassword.setText("Password checked");
+			passwordCheck = true;
 		}
 		else {
 			errorPassword.setText("Password not within 7 to 20\nCharacters");
 		}
 		
-		confirm.setText("Profile Created!");
-		data.setUserInfo(name, userName, age, phoneNum, Country, Passport, Password);
-
+		if (nameCheck && userCheck && ageCheck && phoneCheck && passportCheck && passwordCheck) {
+			confirm.setText("Profile Created!");
+			data.setUserInfo(name, userName, age, phoneNum, Country, Passport, Password);
+		} else {
+			confirm.setText("Profile Not Created, please check warnings");
+		}
 
 	}
 	
