@@ -26,8 +26,13 @@ public class ManagerTerminateController implements Initializable{
 	private Scene scene;
 	private Parent root;
 	
+	Flight flight = Flight.getInstance();
+	FlightsList list = FlightsList.getInstance();
+	Airport airport = Airport.getInstance();
 	Manager manager = new Manager();
 	List<String> listOfNames;
+	List<Flight> flights = null;
+	FlightsFileWriter writer = new FlightsFileWriter();
 	
 	@FXML
     private Label textBox1;
@@ -42,14 +47,8 @@ public class ManagerTerminateController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = null;
-		try {
-			flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+		flights = list.getList();
 		System.out.println(flights);
 		
     	listOfNames = manager.getAllFlights(flights);
@@ -80,9 +79,7 @@ public class ManagerTerminateController implements Initializable{
     @FXML
     public void chooseFlight(ActionEvent event) throws IOException {
     	String name = comboBox.getValue();
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-    	Flight flight = manager.getFlight(flights, name);
+    	flight = manager.getFlight(flights, name);
     	
     	textBox1.setText(
     			"Flight Number: " + flight.getName() + "\n" +
@@ -106,9 +103,7 @@ public class ManagerTerminateController implements Initializable{
     @FXML
     public void Submit(ActionEvent event) throws IOException {
     	String name = comboBox.getValue();
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-    	Flight flight = manager.getFlight(flights, name);
+    	flight = manager.getFlight(flights, name);
     	manager.terminateFlight(flight);
     	System.out.print(flight);
     	textBox1.setText(
@@ -129,6 +124,9 @@ public class ManagerTerminateController implements Initializable{
 				"Duration: " + flight.getDuration() + "\n" +
 				"Booking Status: " + flight.getBookStatus());
     	confirmationText.setText("Successfully Terminated!");
+    	
+    	//Writes to File
+    	writer.write(list.getList());
     }
 
 }

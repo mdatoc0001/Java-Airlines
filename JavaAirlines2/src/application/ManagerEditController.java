@@ -25,8 +25,12 @@ public class ManagerEditController implements Initializable {
 	private Scene scene;
 	private Parent root;
 	
+	Flight flight = Flight.getInstance();
+	FlightsList list = FlightsList.getInstance();
 	Manager manager = new Manager();
 	List<String> listOfNames;
+	List<Flight> flights = null;
+	FlightsFileWriter writer = new FlightsFileWriter();
 	
 	@FXML
     private ComboBox<String> comboBox;
@@ -53,14 +57,8 @@ public class ManagerEditController implements Initializable {
     	comboBox.setItems(FXCollections.observableArrayList("Flight Name","Departing City","Arrival City","Departing Date","Arrival Date","Departing Time","Arrival Time","Terminal","Gate","Total Seats","Taken Seats","Available Seats","Cost","Duration","Book Status"));
     	
     	// Flight Names Combo Box
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = null;
-		try {
-			flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+		flights = list.getList();
 		System.out.println(flights);
 		
     	listOfNames = manager.getAllFlights(flights);
@@ -91,9 +89,7 @@ public class ManagerEditController implements Initializable {
     @FXML
     public void chooseFlight(ActionEvent event) throws IOException {
     	String name = comboBoxFlights.getValue();
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-    	Flight flight = manager.getFlight(flights, name);
+    	flight = manager.getFlight(flights, name);
     	
     	textBox1.setText(
     			"Flight Number: " + flight.getName() + "\n" +
@@ -119,12 +115,12 @@ public class ManagerEditController implements Initializable {
     	String name = comboBoxFlights.getValue();
     	String dataType = comboBox.getValue();
     	String newData = dataText.getText();
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-    	Flight flight = manager.getFlight(flights, name);
+    	flight = manager.getFlight(flights, name);
     	manager.changeFlightInfo(flight, dataType, newData);
     	confirmationText.setText("Data Change Successful!");
     	System.out.print(flight);
+    	
+    	writer.write(flights);
     	
     	textBox1.setText(
     			"Flight Number: " + flight.getName() + "\n" +

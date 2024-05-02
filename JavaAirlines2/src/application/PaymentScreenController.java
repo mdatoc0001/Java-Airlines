@@ -21,8 +21,14 @@ import javafx.stage.Stage;
 
 public class PaymentScreenController implements Initializable {
 
+	UserInfo user = UserInfo.getInstance();
+	Airport airport = Airport.getInstance();
 	Flight flight = Flight.getInstance();
+	FlightsList list = FlightsList.getInstance();
 	Payment payment = Payment.getInstance();
+	Reservation reservation = Reservation.getInstance();
+	FlightsFileWriter writer = new FlightsFileWriter();
+	List<Flight> flights = null;
 	
 	private Stage stage;
 	private Scene scene;
@@ -94,6 +100,15 @@ public class PaymentScreenController implements Initializable {
        	} else if (payment.getCvv().equals("") || payment.cvvLength()) {
        		error.setText("Please Enter cvv Info");
        	} else {
+       		flights = list.getList();
+       		reservation.setReservation(user, flight, airport);
+        	reservation.confirmReservation();
+        	
+        	flights.get(airport.location(flights, flight.getName())).setBookStatus("Booked");
+        	writer.write(flights);
+       		
+        	System.out.println(flight);
+        	
        		FXMLLoader loader = new FXMLLoader(getClass().getResource("ConfirmationScene.fxml"));
     		root = loader.load();
     		

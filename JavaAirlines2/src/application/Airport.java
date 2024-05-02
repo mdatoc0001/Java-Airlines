@@ -58,6 +58,18 @@ public class Airport {
     	return flight;
     }
     
+    //Gets location of flight in list
+    public int location(List<Flight> flights, String name) {
+    	int location = 0;
+    	for (int i=0; i<flights.size(); i++) {
+        	if (flights.get(i).getName().equals(name)) {
+        		flight = flights.get(i);
+        		location = i;
+        	}
+        }
+    	return location;
+    }
+    
     //getters
     public String getName() {
          return this.name;

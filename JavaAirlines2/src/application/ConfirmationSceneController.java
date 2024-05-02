@@ -21,7 +21,7 @@ public class ConfirmationSceneController implements Initializable {
 	Airport airport = Airport.getInstance();
 	Flight flight = Flight.getInstance();
 	Payment payment = Payment.getInstance();
-	Reservation reservation;
+	Reservation reservation = Reservation.getInstance();
 	
 	private Stage stage;
 	private Scene scene;
@@ -37,9 +37,6 @@ public class ConfirmationSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
     	
     	confirmationNo.setText(payment.getPaymentID());
-    	
-    	reservation = new Reservation(user, flight, airport);
-    	reservation.confirmReservation();
     	textBox1.setText(reservation.toString());
     	
     }

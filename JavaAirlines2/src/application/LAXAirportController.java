@@ -26,7 +26,9 @@ public class LAXAirportController implements Initializable {
 
 	Airport lax = Airport.getInstance();
 	Flight flightChosen = Flight.getInstance();
+	FlightsList list = FlightsList.getInstance();
 	List<String> listOfNames;
+	List<Flight> flights = null;
 
     @FXML
     private ComboBox<String> comboBoxLAX;
@@ -39,14 +41,8 @@ public class LAXAirportController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = null;
-		try {
-			flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+		flights = list.getList();
 		System.out.println(flights);
 
 		//LAX ComboBox Flights
@@ -79,8 +75,6 @@ public class LAXAirportController implements Initializable {
     @FXML
     public void flightChosenLAX(ActionEvent event) throws IOException {
     	String name = comboBoxLAX.getValue();
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
     	Flight flight = lax.getFlight(flights, name);
 
     	textBox1.setText(

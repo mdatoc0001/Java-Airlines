@@ -18,7 +18,7 @@ public class Main extends Application {
 			
 			Image icon = new Image("Icon.png");
 			primaryStage.getIcons().add(icon);
-			primaryStage.setTitle("JavaAirlines™");
+			primaryStage.setTitle("JavaAirlinesï¿½");
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -29,6 +29,10 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		
+		FlightsList list = FlightsList.getInstance();
+		list.setList();
+		
 		launch(args);
 	}
 }

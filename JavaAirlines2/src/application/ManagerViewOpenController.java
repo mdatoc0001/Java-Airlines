@@ -25,8 +25,11 @@ public class ManagerViewOpenController implements Initializable {
 	private Scene scene;
 	private Parent root;
 	
+	Flight flight = Flight.getInstance();
+	FlightsList list = FlightsList.getInstance();
 	Manager manager = new Manager();
 	List<String> listOfNames = new ArrayList<>();
+	List<Flight> flights = null;
 	
     @FXML
     private Label flightDataText;
@@ -39,14 +42,8 @@ public class ManagerViewOpenController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = null;
-		try {
-			flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+		flights = list.getList();
 		System.out.println(flights);
 		
     	listOfNames = manager.getOpenFlights(flights);
@@ -77,9 +74,7 @@ public class ManagerViewOpenController implements Initializable {
     @FXML
     public void view(ActionEvent event) throws IOException {
     	String name = comboBox.getValue();
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-    	Flight flight = manager.getFlight(flights, name);
+    	flight = manager.getFlight(flights, name);
     	
     	if (name == null) {
     		flightDataText.setText("No Flight Chosen");

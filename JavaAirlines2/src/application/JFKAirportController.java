@@ -26,7 +26,9 @@ public class JFKAirportController implements Initializable {
 	
 	Airport jfk = Airport.getInstance();
 	Flight flightChosen = Flight.getInstance();
+	FlightsList list = FlightsList.getInstance();
 	List<String> listOfNames;
+	List<Flight> flights = null;
     
     @FXML
     private ComboBox<String> comboBoxJFK;
@@ -39,14 +41,8 @@ public class JFKAirportController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = null;
-		try {
-			flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+		flights = list.getList();
 		System.out.println(flights);
     	
     	//JFK ComboBox Flights
@@ -79,8 +75,6 @@ public class JFKAirportController implements Initializable {
     @FXML
     public void flightChosenJFK(ActionEvent event) throws IOException {
     	String name = comboBoxJFK.getValue();
-    	FlightParser parser2 = new FlightParser();
-    	List<Flight> flights = parser2.readFlightsFromTXT("src//application//Flights.txt");
     	Flight flight = jfk.getFlight(flights, name);
     	
     	textBox1.setText(
