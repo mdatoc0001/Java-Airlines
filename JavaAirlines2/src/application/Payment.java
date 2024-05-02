@@ -204,7 +204,7 @@ public class Payment {
 	   return paymentID;
    }
    
-   //Checks the length of card no. for validation
+   //Checks the length of validity date for validation
    public boolean validityDateLength() {
 	   if (validityDate.length() == 4) {
 		   return true;
