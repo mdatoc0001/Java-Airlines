@@ -57,23 +57,23 @@ public class FlightTest {
    // Test for getting and setting departure
    @Test
    public void testGetFlightDeparture() {
-      assertEquals("LAX", test.getDepartAirport());
+      assertEquals("LAX", test.getdepartCity());
    }
    @Test
    public void testSetFlightDeparture() {
-      test.setDepartAirport("Departure2");
-      assertEquals("Departure2", test.getDepartAirport());
+      test.setdepartCity("Departure2");
+      assertEquals("Departure2", test.getdepartCity());
    }
    
    // Test for getting and setting arrival
    @Test
    public void testGetFlightArrival() {
-      assertEquals("BNA", test.getArrivalAirport());
+      assertEquals("BNA", test.getarrivalCity());
    }
    @Test
    public void testSetFlightArrival() {
-      test.setArrivalAirport("Airport2");
-      assertEquals("Airport2", test.getArrivalAirport());
+      test.setarrivalCity("Airport2");
+      assertEquals("Airport2", test.getarrivalCity());
    }
    
    // Test for getting and setting duration
