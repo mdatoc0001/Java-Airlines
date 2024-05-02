@@ -43,11 +43,6 @@ public class PaymentTest {
       assertEquals("$600", p.getCost());
    }
    
-   /*@Test
-   public void testGetPaymentStatus() {
-      assertEquals(true, p.getPaymentStatus());
-   }*/
-   
    @Test
    public void testGetCardNo() {
       p.setPaymentInfo("Debit", "Emy", "04/28", "$600", "909076847", "788");
@@ -59,11 +54,6 @@ public class PaymentTest {
       p.setPaymentInfo("Debit", "Emy", "04/28", "$600", "909076847", "788");
       assertEquals("788", p.getCvv());
    }
-   
-   /*@Test
-   public void testGetPaymentID() {
-      assertEquals("909090", p.getPaymentID());
-   }*/
    
    @Test
    public void testSetCardType() {
@@ -93,7 +83,6 @@ public class PaymentTest {
    public void testSetPaymentStatus() {
       p.setPaymentStatus(false);
       assertEquals(false, p.getPaymentStatus());
-      //System.out.println(" ");
    }
    
    @Test
