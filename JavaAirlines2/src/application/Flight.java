@@ -12,7 +12,6 @@ public class Flight {
 	private Flight(){}
 
 	public static Flight getInstance() {
-
 		return instance;
 	}
 	
@@ -33,47 +32,24 @@ public class Flight {
     private String duration;
     private String bookStatus;
     
-    // Constructor method using manual string parameters
-    public void setFlight(String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
-        this.name = n;
-        this.departCity = da;
-        this.arrivalCity = aa;
-        this.departDate = dd;
-        this.arrivalDate = ad;
-        this.departTime = dt;
-        this.arrivalTime = at;
-        this.terminal = t;
-        this.gate = g;
-        this.totalSeats = ts;
-        this.takenSeats = tas;
-        this.availableSeats = as;
-        this.cost = c;
-        this.duration = d;
-        this.bookStatus = b;
-    }
-    
     // Constructor method for String List of Flight Details
     public Flight (String[] flightDetails) {
-    	
     	if (flightDetails.length == 15) {
-    		
-    	
-        this.name = flightDetails[0];
-        this.departCity = flightDetails[1];
-        this.arrivalCity = flightDetails[2];
-        this.departDate = flightDetails[3];
-        this.arrivalDate = flightDetails[4];
-        this.departTime = flightDetails[5];
-        this.arrivalTime = flightDetails[6];
-        this.terminal = flightDetails[7];
-        this.gate = flightDetails[8];
-        this.totalSeats = flightDetails[9];
-        this.takenSeats = flightDetails[10];
-        this.availableSeats = flightDetails[11];
-        this.cost = flightDetails[12];
-        this.duration = flightDetails[13];
-        this.bookStatus = flightDetails[14];
-        
+    		this.name = flightDetails[0];
+    		this.departCity = flightDetails[1];
+    		this.arrivalCity = flightDetails[2];
+    		this.departDate = flightDetails[3];
+    		this.arrivalDate = flightDetails[4];
+    		this.departTime = flightDetails[5];
+    		this.arrivalTime = flightDetails[6];
+    		this.terminal = flightDetails[7];
+    		this.gate = flightDetails[8];
+    		this.totalSeats = flightDetails[9];
+    		this.takenSeats = flightDetails[10];
+    		this.availableSeats = flightDetails[11];
+    		this.cost = flightDetails[12];
+    		this.duration = flightDetails[13];
+    		this.bookStatus = flightDetails[14];
     	} else {
             throw new IllegalArgumentException("Invalid flight data");
         }
@@ -98,6 +74,25 @@ public class Flight {
         this.duration = flightDetails.getDuration();
         this.bookStatus = flightDetails.getBookStatus();
       
+    }
+    
+    // Setting method using manual string parameters
+    public void setFlight(String n, String da, String aa, String dd, String ad, String dt, String at, String t, String g, String ts, String tas, String as, String c, String d, String b) {
+        this.name = n;
+        this.departCity = da;
+        this.arrivalCity = aa;
+        this.departDate = dd;
+        this.arrivalDate = ad;
+        this.departTime = dt;
+        this.arrivalTime = at;
+        this.terminal = t;
+        this.gate = g;
+        this.totalSeats = ts;
+        this.takenSeats = tas;
+        this.availableSeats = as;
+        this.cost = c;
+        this.duration = d;
+        this.bookStatus = b;
     }
     
     //Getters

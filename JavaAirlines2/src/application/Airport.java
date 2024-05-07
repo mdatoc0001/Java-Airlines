@@ -10,7 +10,6 @@ public class Airport {
 	private Airport(){}
 
 	public static Airport getInstance() {
-
 		return instance;
 	}
 	

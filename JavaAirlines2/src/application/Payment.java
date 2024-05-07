@@ -10,7 +10,6 @@ public class Payment {
 	private Payment(){}
 
 	public static Payment getInstance() {
-
 		return instance;
 	}
 	
@@ -23,7 +22,8 @@ public class Payment {
    protected String cvv;
    protected String paymentID;
    
-   public void setPaymentInfo(String cardType, String name, String validityDate, String cost, String cardNo, String cvv) {
+   public void setPaymentInfo(String cardType, String name, String validityDate, String cost, 
+		   String cardNo, String cvv) {
       this.cardType = cardType;
       this.name = name;
       this.validityDate = validityDate; 

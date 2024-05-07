@@ -7,8 +7,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.Writer;
 
-
-
 public class Manager {
     
 	// Declaring Variables

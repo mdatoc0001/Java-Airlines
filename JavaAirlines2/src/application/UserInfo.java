@@ -15,7 +15,6 @@ public class UserInfo {
 		return instance;
 	}
 	
-
 	public void setUserInfo(String one, String two, int three, String four, String five, String six, String seven) {
 		
 		Name = one;
@@ -26,39 +25,42 @@ public class UserInfo {
 		Passport = six;
 		Password = seven;
 	}
+	
+	// Getters
 	public String getName() {
 		
-	   return Name;
-	  }
+		return Name;
+	}
 	public String getUserName() {
 		
-		   return userName;
-		  }
+		return userName;
+	}
 	public int getAge() {
 		
-		   return Age;
-		  }
+		return Age;
+	}
 	public String getPhone() {
 			
-			   return Phone;
-			  }
+		return Phone;
+	}
 	public String getCountry() {
 		
-		   return Country;
-		  }
-		public String getPassport() {
+		return Country;
+	}
+	public String getPassport() {
 			
-			   return Passport;
-			  }
-		public String getPassword() {
+		return Passport;
+	}
+	public String getPassword() {
 			
-			   return Password;
-			  }
+		return Password;
+	}
 	
+	// Sets user name
 	public void setUserName(String a) {
 		
-		   userName = a;
-		  }
+		userName = a;
+	}
 	
 	public void displayName(String userName) {
 		

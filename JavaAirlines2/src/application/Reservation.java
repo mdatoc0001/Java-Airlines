@@ -11,7 +11,6 @@ public class Reservation {
 	private Reservation(){}
 
 	public static Reservation getInstance() {
-
 		return instance;
 	}
     
