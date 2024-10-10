@@ -33,3 +33,5 @@ Future Updates
 - Customer ability to cancel or modify reservations
 - Encrypting user and payment information
 - Adding more airports!
+
+*** Notes: Feel Free to take a look at our presentation slides for more info on our project and/or download our playthrough video of our program (.mp4) ***
